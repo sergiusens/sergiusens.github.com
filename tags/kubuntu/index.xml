@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubuntu on </title>
+    <link>http://blog.sergiusens.org/tags/kubuntu/</link>
+    <description>Recent content in Kubuntu on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Jul 2018 09:50:20 -0300</lastBuildDate>
+    
+	<atom:link href="http://blog.sergiusens.org/tags/kubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Laptop</title>
+      <link>http://blog.sergiusens.org/posts/new-laptop/</link>
+      <pubDate>Tue, 17 Jul 2018 09:50:20 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/new-laptop/</guid>
+      <description>Triggers Recently, as of last week, I decided to purchase a new laptop to replace my Microsoft Surface Pro 4 with which I was having a bittersweet relationship. The Surface Pro 4 is really nice hardware, I originally got it to get a head start and collaborate on the convergence story with Unity 8 on the desktop, but as is of folk knowledge now, some strategic choices were made.</description>
+    </item>
+    
+  </channel>
+</rss>
