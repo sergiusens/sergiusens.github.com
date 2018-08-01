@@ -6,10 +6,20 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Jul 2018 09:50:20 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 30 Jul 2018 17:47:42 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Snapcraft Build Environments</title>
+      <link>http://blog.sergiusens.org/posts/snapcraft-build-environments/</link>
+      <pubDate>Mon, 30 Jul 2018 17:47:42 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/snapcraft-build-environments/</guid>
+      <description>Prologue After a week away from my computer I want to organize my thoughts on the progress made towards build VMs by providing this write up since that forum post can be a bit overwhelming if you are casually wanting to keep up to date.
+The reasons for this feature work to exist, for those not up to speed, is that we want to have a very consistent build environment for which anyone building a project can have an expectable outcome of a working snap (or non working one if it really doesn&amp;rsquo;t).</description>
+    </item>
     
     <item>
       <title>New Laptop</title>
