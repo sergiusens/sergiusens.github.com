@@ -6,10 +6,20 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Jul 2018 17:47:42 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 20:22:04 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reporting Metrics Back to Ubuntu</title>
+      <link>http://blog.sergiusens.org/posts/reporting-metrics-back-to-ubuntu/</link>
+      <pubDate>Wed, 08 Aug 2018 20:22:04 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/reporting-metrics-back-to-ubuntu/</guid>
+      <description>A short lived ride After some time on Kubuntu on this new laptop, I just re-discovered that I did not want to live in the Plasma world anymore. While I do value all the work the team behind it does, the user interface is just not for me as it feels rather busy to my liking.
+In that aforementioned post I wrote about running the Ubuntu Report Tool on this system, it is not part of the Kubuntu install or first boot experience but you can install it by running apt install ubuntu-report followed by running ubuntu-report to actually create the report and if you want, send it too.</description>
+    </item>
     
     <item>
       <title>Snapcraft Build Environments</title>

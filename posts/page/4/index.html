@@ -4,44 +4,41 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Snappy rolling back on kernel panic &middot; </title>
+    <title>Posts &middot; </title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="../../favicon.ico" />
-    <link rel="canonical" href="../../" />
+    <link rel="shortcut icon" href="../../../favicon.ico" />
+    <link rel="canonical" href="../../../" />
 
-     <meta name="description" content="Image you get an update and the kernel panics with that update, what are you to do? Suppose now that you have a snappy based system, this is automatically solve" /> 
+    
+    <meta name="description" content="Just my thoughts" /> 
 
-     
     
     <meta name="twitter:card" content="summary"/>
-    
+    <meta name="twitter:image" content="img/banner.jpg"/>
  
-    <meta name="twitter:title" content="Snappy rolling back on kernel panic"/>
-    <meta name="twitter:description" content="Image you get an update and the kernel panics with that update, what are you to do? Suppose now that you have a snappy based system, this is automatically solve"/>
-    <meta name="twitter:url" content="/posts/snappy_rolling_back_on_kernel_panic/" />
+    <meta name="twitter:title" content="Posts"/>
+    <meta name="twitter:description" content="Just my thoughts"/>
+    <meta name="twitter:url" content="/posts/" />
     <meta name="twitter:site" content="@sergiusens"/>
 
     <meta property="og:site_name" content="" />
-    <meta property="og:title" content="Snappy rolling back on kernel panic &middot; I me mine" />
-    <meta property="og:url" content="/posts/snappy_rolling_back_on_kernel_panic/" />
+    <meta property="og:title" content="Posts &middot; I me mine" />
+    <meta property="og:url" content="/posts/" />
     
 
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="Image you get an update and the kernel panics with that update, what are you to do? Suppose now that you have a snappy based system, this is automatically solve" />
-
-    <meta property="article:published_time" content="2015-05-08T12:31:49-03:00" />
-    <meta property="article:tag" content="snappy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Just my thoughts" />
 
     <meta property="og:image" content="img/banner.jpg"/>
 
     <meta name="generator" content="Hugo 0.46" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
-    <link rel="stylesheet" type="text/css" href="../../css/casper-two.css" /> 
+    <link rel="stylesheet" type="text/css" href="../../../built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="../../../css/casper-two.css" /> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
     
 
@@ -50,9 +47,7 @@
 </head>
 
 
-<body class="ctsingle">
-
-  <div class="site-wrapper"> 
+<body class="home-template"><div class="site-wrapper">
 
 <header class="site-header outer "  style="background-image: url(/img/banner.jpg)"  >
   <div class="inner">
@@ -87,118 +82,62 @@
   </div>
 </header>
 
-
 <main id="site-main" class="site-main outer" role="main">
   <div class="inner">
-    
     <div class="post-feed">
-      <article class="post-card post"> 
+      
+
+
+<article class="post-card post"> 
     
-    <a class="post-card-image-link" href="../../posts/snappy_rolling_back_on_kernel_panic/">
-      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
+    <a class="post-card-image-link" href="../../../posts/travis-and-ruby-gems-setup-on-ubuntu/">
+      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
     </a>    
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="../../posts/snappy_rolling_back_on_kernel_panic/">
+      <a class="post-card-content-link" href="../../../posts/travis-and-ruby-gems-setup-on-ubuntu/">
           <header class="post-card-header">
-              <span class="post-card-tags">
-              #snappy  </span>
               
-              <h2 class="post-card-title">Snappy rolling back on kernel panic</h2>
+              <h2 class="post-card-title">Travis and ruby gems setup on Ubuntu</h2>
           </header>
+          <section class="post-card-excerpt">
+              
+                <p> Quick install Most of the instalation instructions that dangle the web just make you sudo gem install, I don&rsquo;t like that, so here&rsquo;s the quick reference for when I need to do this next time:
+sudo apt install ruby-dev export GEM_HOME=$HOME/gems gem install travis -v 1.7.4 --no-rdoc --no-ri  And this goes into ~/.bashrc:
+export GEM_HOME=$HOME/gems export PATH=$PATH:$GEM_HOME/bin   </p>
+              
+          </section>
       </a>
-      <section class="post-card-excerpt" style="padding: 0 25px;">
-          8 May 2015
-          <p>Image you get an update and the kernel panics with that update, what are you to
-do? Suppose now that you have a snappy based system, this is automatically
-solved for you.</p>
-
-<p>Here’s a short video showing this on a Beagle Bone Black, the concept is quite
-simple, if there is a panic, we revert to the last known state. In this video I
-inject an initrd that panics on boot after issuing a <code>snappy update</code> and before
-rebooting into the update.</p>
-
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/xIHEy5saBa8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-
-<p>In this video you observe the following:</p>
-
-<ul>
-<li>Manually checking for updates.</li>
-<li>Manually applying the updates.</li>
-<li>How the a/b boot selection is done.</li>
-<li>Implicitly observe the internal (<em>subject to change</em>) layout of <code>snappy-boot</code>
-and <code>system-a</code> or <code>system-b</code> selection.</li>
-<li>Rebooting into the new kernel.</li>
-<li>Observing a panic and rebooting back into the working system.</li>
-</ul>
-
-<p>In the normal case this would seldom happen (the broken boot aside) as the
-autopiloting feature is enabled by default today, which you can check by
-running <code>snappy config ubuntu-core</code></p>
-
-      </section>
 
       <footer class="post-card-meta">
-          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
-          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
+          <img class="author-profile-image" src="../../../img/avatar.png" alt="Author" />
+          <span class="post-card-author"><a href="../../../">Sergio Schvezov</a></span>
       </footer>
     </div>
 </article>
+
+
     </div>
 
     <nav class="pagination" role="navigation">
       
-          <a class="newer-posts" href="../../posts/the-github-or-launchpad-dilemma/">&larr; <span class="hide">Next Post</span></a>
+          <a class="newer-posts" href="../../../posts/page/3/">&larr; <span class="hide">Next Posts</span></a>
       
-      <span class="page-number">&nbsp;</span>
-      
-          <a class="older-posts" href="../../posts/updates-in-snappy-and-ubunu-device-flash/"><span class="hide">Previous Post</span> &rarr;</a>
+      <span class="page-number"><span class="hide">Page 4 of 4</span>&nbsp;</span>
       
     </nav>
-
-    
-    
-    
-
-<div id="disqus_thread"></div>
-<script>
-
-
-
-
-var disqus_config = function () {
-this.page.url = "http:\/\/blog.sergiusens.org\/posts\/snappy_rolling_back_on_kernel_panic\/";  
-this.page.identifier = "http:\/\/blog.sergiusens.org\/posts\/snappy_rolling_back_on_kernel_panic\/"; 
-};
-
-(function() { 
-var d = document, s = d.createElement('script');
-s.src = 'https://sergiusens.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
   </div>
 </main>
-
-
 
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="../../"></a> All rights reserved - 2018 <br>
+      <a href="../../../"></a> All rights reserved - 2018 <br>
       
     </section>
     <nav class="site-footer-nav">
-        <a href="../../">Latest Posts</a>
+        <a href="../../../">Latest Posts</a>
         
         <a href="https://twitter.com/sergiusens" target="_blank" rel="noopener">Twitter</a>
         <a href="https://github.com/sergiusens" target="_blank" rel="noopener">Github</a>
@@ -208,8 +147,7 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 </footer>
 
-</div>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+</div><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.fitvids.js"></script>
 
@@ -223,7 +161,5 @@ s.setAttribute('data-timestamp', +new Date());
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
-
-
 
 </body></html>
