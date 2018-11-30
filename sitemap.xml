@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.sergiusens.org/posts/snapcraft-3.0/</loc>
+    <lastmod>2018-11-30T16:47:42-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.sergiusens.org/posts/reporting-metrics-back-to-ubuntu/</loc>
     <lastmod>2018-08-08T20:22:04-03:00</lastmod>
   </url>
@@ -99,7 +104,7 @@
   
   <url>
     <loc>http://blog.sergiusens.org/</loc>
-    <lastmod>2018-08-08T20:22:04-03:00</lastmod>
+    <lastmod>2018-11-30T16:47:42-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -122,7 +127,7 @@
   
   <url>
     <loc>http://blog.sergiusens.org/tags/development/</loc>
-    <lastmod>2018-07-30T17:47:42-03:00</lastmod>
+    <lastmod>2018-11-30T16:47:42-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,19 +151,19 @@
   
   <url>
     <loc>http://blog.sergiusens.org/posts/</loc>
-    <lastmod>2018-08-08T20:22:04-03:00</lastmod>
+    <lastmod>2018-11-30T16:47:42-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.sergiusens.org/tags/snapcraft/</loc>
-    <lastmod>2018-07-30T17:47:42-03:00</lastmod>
+    <lastmod>2018-11-30T16:47:42-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.sergiusens.org/tags/snappy/</loc>
-    <lastmod>2018-07-30T17:47:42-03:00</lastmod>
+    <lastmod>2018-11-30T16:47:42-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -176,7 +181,7 @@
   
   <url>
     <loc>http://blog.sergiusens.org/categories/ubuntu/</loc>
-    <lastmod>2018-08-08T20:22:04-03:00</lastmod>
+    <lastmod>2018-11-30T16:47:42-03:00</lastmod>
     <priority>0</priority>
   </url>
   

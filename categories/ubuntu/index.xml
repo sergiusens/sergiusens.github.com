@@ -6,10 +6,22 @@
     <description>Recent content in Ubuntu on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Aug 2018 20:22:04 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 30 Nov 2018 16:47:42 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Snapcraft 3.0</title>
+      <link>http://blog.sergiusens.org/posts/snapcraft-3.0/</link>
+      <pubDate>Fri, 30 Nov 2018 16:47:42 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/snapcraft-3.0/</guid>
+      <description>The release notes for snapcraft 3.0 have been long overdue. For convenience I will reproduce them here too.
+Presenting snapcraft 3.0 The arrival of snapcraft 3.0 brings fresh air into how snap development takes place!
+We took the learnings from the main pain points you had when creating snaps in the past several years, and we we introduced those lessons into a brand new release - snapcraft 3.0!
+Build Environments As the cornerstone for behavioral change, we are introducing the concept of build environments.</description>
+    </item>
     
     <item>
       <title>Reporting Metrics Back to Ubuntu</title>

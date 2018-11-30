@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en-us" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Snapcraft 3.0 &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../../favicon.ico" />
+    <link rel="canonical" href="../../" />
+
+     <meta name="description" content="The release notes for snapcraft 3.0 have been long overdue. For convenience I will reproduce them here too.
+Presenting snapcraft 3.0 The arrival of snapcraft 3." /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Snapcraft 3.0"/>
+    <meta name="twitter:description" content="The release notes for snapcraft 3.0 have been long overdue. For convenience I will reproduce them here too.
+Presenting snapcraft 3.0 The arrival of snapcraft 3."/>
+    <meta name="twitter:url" content="/posts/snapcraft-3.0/" />
+    <meta name="twitter:site" content="@sergiusens"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Snapcraft 3.0 &middot; I me mine" />
+    <meta property="og:url" content="/posts/snapcraft-3.0/" />
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="The release notes for snapcraft 3.0 have been long overdue. For convenience I will reproduce them here too.
+Presenting snapcraft 3.0 The arrival of snapcraft 3." />
+
+    <meta property="article:published_time" content="2018-11-30T16:47:42-03:00" />
+    <meta property="article:tag" content="snappy" /><meta property="article:tag" content="snapcraft" /><meta property="article:tag" content="development" />
+
+    <meta property="og:image" content="img/banner.jpg"/>
+
+    <meta name="generator" content="Hugo 0.52" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="../../css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="ctsingle">
+
+  <div class="site-wrapper"> 
+
+<header class="site-header outer "  style="background-image: url(/img/banner.jpg)"  >
+  <div class="inner">
+    <div class="site-header-content">
+      <h1 class="site-title"> I me mine  </h1>
+        <h2 class="site-description">A placeholder to write things down </h2>
+    </div>
+
+    <nav class="site-nav">
+      <div class="site-nav-left"><ul class="nav" role="menu">
+        
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/sergiusens" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/sergiusens" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/SergioSchvezov" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 512 512"><path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683 C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615 c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915 s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z" /></svg></a>
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+    <div class="post-feed">
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="../../posts/snapcraft-3.0/">
+      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="../../posts/snapcraft-3.0/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #snappy 
+              #snapcraft 
+              #development  </span>
+              
+              <h2 class="post-card-title">Snapcraft 3.0</h2>
+          </header>
+      </a>
+      <section class="post-card-excerpt" style="padding: 0 25px;">
+          30 November 2018
+          
+
+<p>The release notes for <a href="https://github.com/snapcore/snapcraft/releases/tag/3.0">snapcraft 3.0</a> have been long overdue.
+For convenience I will reproduce them here too.</p>
+
+<h1 id="presenting-snapcraft-3-0">Presenting snapcraft 3.0</h1>
+
+<p>The arrival of snapcraft 3.0 brings fresh air into how snap development takes place!</p>
+
+<p>We took the learnings from the main pain points you had when creating snaps in the
+past several years, and we we introduced those lessons into a brand new release -
+snapcraft 3.0!</p>
+
+<h2 id="build-environments">Build Environments</h2>
+
+<p>As the cornerstone for behavioral change, we are introducing the concept of build
+environments. These are configurations created for every snapcraft project you
+work on, tuned for the desired targets, ensuring API and ABI compatibility are
+in place for every binary through these build environments.</p>
+
+<p>The way build environments  work is by leveraging a feature of the <em>snappy</em> architecture
+alled <strong>bases</strong>.
+A base is the building block that applications can rely on as a stable run time. At build time,
+the snapcraft tool ensures you are creating your applications inside an
+environment specifically tailored for this base.</p>
+
+<p>To make the transition easy, the entire functionality for this new tool behavior is
+triggered by making use of the <code>base</code> keyword in <code>snapcraft.yaml</code>. For backward compatibility,
+all currently well known functionality is still available. You can omit the <code>base</code> keyword and
+continue working as you have previously done until you are ready to move to a newer or different
+stack provided by a different <em>base</em>.</p>
+
+<p>The environment is encapsulated from the user during normal operations, but there are ways
+to step into the environment with the following build command options:</p>
+
+<ul>
+<li><code>--shell</code>, runs upto the prior lifecycle step and drops into a shell instead in lieu of
+running the lifecycle step (e.g.: running <code>snapcraft prime --shell</code> will run upto the
+<code>stage</code> step and drop into a shell).</li>
+<li><code>--shell-after</code>, runs upto the lifecycle step and and then drops into a shell
+(e.g.: running <code>snapcraft prime --shell-after</code> will run upto the
+<code>prime</code> step and then drop into a shell).</li>
+<li><code>--debug</code>, drops into a shell inside the build environment when errors occur.</li>
+</ul>
+
+<p>The below video shows an example of how the system behaves with the new
+unctionality in place:</p>
+
+<p><a href="https://asciinema.org/a/t547f0ItBy6pW3kCSLxdV0JVL"><img src="https://asciinema.org/a/t547f0ItBy6pW3kCSLxdV0JVL.svg" alt="asciicast" /></a></p>
+
+<h2 id="new-platforms">New platforms</h2>
+
+<p>With this release of snapcraft 3.0 we are happy to announce that OS X is supported
+through homebrew. Moreover, the experience is transparent thanks to the use of build
+environments and its underlying technology.</p>
+
+<h2 id="removed-features">Removed features</h2>
+
+<p>When using the <code>base</code> keyword in <code>snapcraft.yaml</code> the following, long ago deprecated,
+features are no longer available:</p>
+
+<ul>
+<li>wiki parts and the quirks in the code base to allow for certain corner cases introduced
+by this feature such as allowing / in parts.</li>
+<li>cleanbuild and triggering builds by use of lxd in certain environment variables.</li>
+<li>The <code>prepare</code>, <code>build</code> and <code>install</code> keywords used in parts are
+replaced with <code>override-build</code> and <code>snapcraftctl</code>, which also have the benefit
+of doing <code>override-</code> for <code>pull</code>, <code>stage</code> and <code>prime</code> as well.</li>
+<li>The <code>snap</code> keyword which was superseded by the <code>prime</code> keyword.</li>
+<li>When calling build commands through snapcraft, <code>--disable-parallel-build</code> is no
+longer available, it can be setup per part using the <code>build-attributes</code> property.</li>
+<li>Also, calling build commands through snapcraft, <code>--use-geoip</code> which affected
+<code>stage-packages</code> is no longer available.
+<br /></li>
+</ul>
+
+<p>The following plugins are no longer available when using the <code>base</code> keyword:</p>
+
+<ul>
+<li><code>tar-content</code>, superseded by the <code>dump</code> plugin.</li>
+<li><code>copy</code>, superseded by the <code>dump</code> plugin.</li>
+<li><code>jhbuild</code>, it has too many dependencies against <code>core</code>.</li>
+</ul>
+
+<h2 id="core-features">Core features</h2>
+
+<p>The snapcraft 3.0 release brings the enablement of these core keywords for <code>snapcraft.yaml</code>
+with the use of the <code>base</code> keyword.</p>
+
+<h3 id="license"><code>license</code></h3>
+
+<p>The license applicable to a snap is defined under the SPDX 2.0 format.
+Validity of the license syntax is done using <code>snap pack</code> schema validation
+to ensure consistency across this <em>snappy</em> ecosystem.</p>
+
+<h3 id="wrapperless-snaps">Wrapperless snaps</h3>
+
+<p>If you were part of the history of snaps since its conception, the idea of these wrappers
+probably make sense as they were useful when they were introduced to setup the environment
+appropriately. The architecture for the runtime has evolved in such a way where these wrappers
+do not make sense anymore as the primitives in the runtime have evolved into allowing a better
+design.</p>
+
+<p>Although it is not the default today, the intention is to make this <code>adapter</code> value (<code>full</code>),
+the default behavior. Advantages of this design are that when entering a shell through
+<code>snap run --shell</code> the environment would be properly loaded through use of <code>command-chain</code>
+entries in <code>snap.yaml</code></p>
+
+<p>The recording below shows how the original <code>command</code> defined in <code>snapcraft.yaml</code> is now still
+the <code>command</code> that makes it to <code>snap.yaml</code> and the <code>command-chain</code> feature is used instead:</p>
+
+<p><a href="https://asciinema.org/a/tq8D2RhEXbsNYkVDVz5EzYDH0"><img src="https://asciinema.org/a/tq8D2RhEXbsNYkVDVz5EzYDH0.svg" alt="asciicast" /></a></p>
+
+<h3 id="extensions">Extensions</h3>
+
+<p>The architecture and framework has been cemented into the <code>snapcraft</code> tool to grow
+declarative functionality in the <code>snapcraft.yaml</code>. We have done this to avoid repetitive
+tasks or require deeper knowledge of a target software stack.</p>
+
+<p>Extensions have a unique property of being applied to the <code>snapcraft.yaml</code> itself, for them
+to be <em>expanded</em> and potentially used in lieu of the extension itself and make further project
+specific modifications.</p>
+
+<p>You will be able to interact with extensions using the following commands:</p>
+
+<ul>
+<li><code>list-extensions</code>, to view the available extensions.</li>
+<li><code>extension</code>, to show information about the extension.</li>
+<li><code>expand-extensions</code>, to display how the <code>snapcraft.yaml</code> will look like with the extensions
+applied.</li>
+</ul>
+
+<h3 id="lifecycle">Lifecycle</h3>
+
+<p>Prior to snapcraft 3.0, one had to go in and manually clean any part that was found to be dirty
+due to modifications in the code itself or the <em>part</em> definition in <code>snapcraft.yaml</code>. This
+was proven to be an unnecessary burden brought upon developers.</p>
+
+<p>Taking this into account, the default action the <code>snapcraft</code> tool takes now is to <em>rebuild</em> parts,
+by either re-running without cleaning a lifecycle step upon changes for plugins that allow for it
+(through their underlying architecture) or automatically cleaning and re-running the necessary
+lifecycle steps for that part.</p>
+
+<p>Here is <code>snapcraft</code> in action considering a project that has already been pulled:</p>
+
+<p><a href="https://asciinema.org/a/l3gN5QyQy3Dgq0KzP52SdNv1q"><img src="https://asciinema.org/a/l3gN5QyQy3Dgq0KzP52SdNv1q.svg" alt="asciicast" /></a></p>
+
+<h3 id="implicit-source">Implicit source</h3>
+
+<p>Previously, if a source was not specified for a part, an implicit default
+source of <code>.</code> were set for parts. This was clearly a mistake that led to
+many confusing errors. Starting with version 3.0, if a plugins requires a
+source to be specified, it will be required through
+the schema for which an appropriate error message will be raised. For plugins
+such as <code>nil</code>, a <code>source</code> is not really needed, so if it is not set, no action
+upon local sources (i.e.: <code>.</code>) will be taken.</p>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>The majority of non deprecated or removed plugins have been reworked to be <code>base</code> aware.
+Since the declaration of the <code>base</code> keyword is done manually by the user, some plugins
+have introduced semantic changes into how they operate as well.</p>
+
+<p>Below is the set of plugins whith interesting changes and new properties
+available to the user.</p>
+
+<h3 id="ant">ant</h3>
+
+<p>These are the properties the <code>ant</code> plugin now operates with:</p>
+
+<pre><code>    - ant-properties:
+      (object)
+      A dictionary of key-value pairs. Set the following properties when
+      running ant.
+
+    - ant-build-targets:
+      (list of strings)
+      Run the given ant targets.
+
+    - ant-version:
+      (string)
+      The version of ant you want to use to build the source artifacts.
+      Defaults to the current release downloadable from
+      https://archive.apache.org/dist/ant/binaries/.
+
+    - ant-version-checksum:
+      (string)
+      The checksum for ant-version in the form of &lt;digest-type&gt;/&lt;digest&gt;.
+      As an example &quot;sha512/2a803f578f341e164f6753e410413d16ab60fab...&quot;.
+
+    - ant-openjdk-version:
+      (string)
+      openjdk version available to the base to use. If not set the latest
+      version available to the base will be used.
+</code></pre>
+
+<h3 id="catkin"><code>catkin</code></h3>
+
+<p>These are the properties the <code>catkin</code> plugin now operates with:</p>
+
+<pre><code>    - catkin-packages:
+      (list of strings)
+      List of catkin packages to build.
+    - source-space:
+      (string)
+      The source space containing Catkin packages. By default this is 'src'.
+    - include-roscore:
+      (boolean)
+      Whether or not to include roscore with the part. Defaults to true.
+    - rosinstall-files:
+      (list of strings)
+      List of rosinstall files to merge while pulling. Paths are relative to
+      the source.
+    - recursive-rosinstall:
+      (boolean)
+      Whether or not to recursively merge/update rosinstall files from fetched
+      sources. Will continue until all rosinstall files have been merged.
+      Defaults to false.
+    - catkin-cmake-args:
+      (list of strings)
+      Configure flags to pass onto the cmake invocation from catkin.
+    - underlay:
+      (object)
+      Used to inform Snapcraft that this snap isn't standalone, and is actually
+      overlaying a workspace from another snap via content sharing. Made up of
+      two properties:
+      - build-path:
+        (string)
+        Build-time path to existing workspace to underlay the one being built,
+        for example '$SNAPCRAFT_STAGE/opt/ros/kinetic'.
+      - run-path:
+        (string)
+        Run-time path of the underlay workspace (e.g. a subdirectory of the
+        content interface's 'target' attribute.)
+    - catkin-ros-master-uri:
+      (string)
+      The URI to ros master setting the env variable ROS_MASTER_URI. Defaults
+      to http://localhost:11311.
+</code></pre>
+
+<h3 id="go"><code>go</code></h3>
+
+<p>These are the properties the <code>go</code> plugin now operates with:</p>
+
+<pre><code>    - go-channel:
+      (string, default: latest/stable)
+      The Snap Store channel to install go from. If set to an empty string,
+      go will be installed using the system's traditional package manager.
+
+    - go-packages:
+      (list of strings)
+      Go packages to fetch, these must be a &quot;main&quot; package. Dependencies
+      are pulled in automatically by `go get`.
+      Packages that are not &quot;main&quot; will not cause an error, but would
+      not be useful either.
+      If the package is a part of the go-importpath the local package
+      corresponding to those sources will be used.
+
+    - go-importpath:
+      (string)
+      This entry tells the checked out `source` to live within a certain path
+      within `GOPATH`.
+      This is not needed and does not affect `go-packages`.
+
+    - go-buildtags:
+      (list of strings)
+      Tags to use during the go build. Default is not to use any build tags.
+</code></pre>
+
+<h3 id="godeps"><code>godeps</code></h3>
+
+<p>These are the properties the <code>godeps</code> plugin now operates with:</p>
+
+<pre><code>    - go-channel:
+      (string, default: latest/stable)
+      The Snap Store channel to install go from. If set to an empty string,
+      go will be installed using the system's traditional package manager.
+
+    - go-packages:
+      (list of strings)
+      Go packages to build/install, these must be a &quot;main&quot; package.
+      Dependencies should have already been retrieved by the `godeps-file`
+      used for this part.
+      Packages that are not &quot;main&quot; will not cause an error, but would
+      not be useful either.
+
+    - godeps-file:
+      (string)
+      Path to the godeps dependencies file contained within the source
+      (default: dependencies.tsv)
+
+    - go-importpath:
+      (string)
+      This entry tells the checked out `source` to live within a certain path
+      within `GOPATH`. This is required in order to work with absolute imports
+      and import path checking.
+</code></pre>
+
+<h3 id="gradle"><code>gradle</code></h3>
+
+<p>These are the properties the <code>gradle</code> plugin now operates with:</p>
+
+<pre><code>    - gradle-options:
+      (list of strings)
+      Flags to pass to the build using the gradle semantics for parameters.
+      The 'jar' option is always passed in as the last parameter.
+
+    - gradle-output-dir:
+      (string; default: 'build/libs')
+      The output directory where the resulting jar or war files from gradle[w]
+      are generated.
+
+    - gradle-version:
+      (string)
+      The version of gradle you want to use to build the source artifacts.
+      Defaults to the current release downloadable from
+      https://services.gradle.org/distributions/
+      The entry is ignored if gradlew is found.
+
+    - gradle-version-checksum:
+      (string)
+      The checksum for gradle-version in the form of &lt;digest-type&gt;/&lt;digest&gt;.
+      As an example &quot;sha512/2a803f578f341e164f6753e410413d16ab60fab...&quot;.
+
+    - gradle-openjdk-version:
+      (string)
+      openjdk version available to the base to use. If not set the latest
+      version available to the base will be used.
+</code></pre>
+
+<h3 id="meson"><code>meson</code></h3>
+
+<p>These are the properties the <code>meson</code> plugin now operates with:</p>
+
+<pre><code>    - meson-version:
+      (string)
+      The version of meson to install from PyPI.
+      If unspecified, the latest released version of meson will be used.
+    - meson-parameters:
+      (list of strings)
+      Pass the given parameters to the meson command.
+</code></pre>
+
+<h3 id="nodejs"><code>nodejs</code></h3>
+
+<p>These are the properties the <code>nodejs</code> plugin now operates with:</p>
+
+<pre><code>    - nodejs-version:
+      (string)
+      The version of nodejs you want the snap to run on.
+      This includes npm, as would be downloaded from https://nodejs.org
+      Defaults to the current LTS release.
+
+    - nodejs-package-manager
+      (string; default: yarn)
+      The language package manager to use to drive installation
+      of node packages. Can be either `npm` or `yarn` (default).
+
+    - nodejs-yarn-version:
+      (string)
+      Applicable when using yarn. Defaults to the latest if not set.
+</code></pre>
+
+<h3 id="python"><code>python</code></h3>
+
+<p>These are the properties the <code>python</code> plugin now operates with:</p>
+
+<pre><code>    - requirements:
+      (list of strings)
+      List of paths to requirements files.
+
+    - constraints:
+      (list of strings)
+      List of paths to constraint files.
+
+    - process-dependency-links:
+      (bool; default: false)
+      Enable the processing of dependency links in pip, which allow one
+      project to provide places to look for another project
+    
+    - python-packages:
+      (list)
+      A list of dependencies to get from PyPI
+    
+    - python-version:
+      (string; default: python3)
+      The python version to use. Valid options are: python2 and python3
+</code></pre>
+
+<h1 id="full-list-of-changes">Full list of changes</h1>
+
+<p>The issues and features worked on for 3.0 can be seen on the <a href="https://launchpad.net/snapcraft/+milestone/3.0">3.0 launchpad milestone</a> which are reflected in the following change list:</p>
+
+<ul>
+<li>snap: add the https transport (#2244)</li>
+<li>build providers: environment setup for projects (#2225)</li>
+<li>build providers: provide support to shell in (#2249)</li>
+<li>build providers: shell in provider if debug is used (#2252)</li>
+<li>build-providers: add support for &ndash;shell-after  (#2253)</li>
+<li>build providers: add support for &ndash;shell (#2254)</li>
+<li>build providers: snapcraft images for multipass (#2258)</li>
+<li>build providers: allow setting ram and disk size (#2260)</li>
+<li>build providers: inject the base for classic (#2261)</li>
+<li>build providers: allow snapcraft channel selection (#2265)</li>
+<li>build providers: refresh packages on bring up (#2267)</li>
+<li>build providers: let the implementor pick the image (#2269)</li>
+<li>reporting: fail gracefully on submit errors (#2271)</li>
+<li>meta: friendlier message for incorrect app command (#2272)</li>
+<li>snap: use a newer PyYAML and drop patches (#2274)</li>
+<li>build providers: use the best CPU configuration (#2273)</li>
+<li>build providers: use the provider if exported (#2275)</li>
+<li>snap: move to a newer pysha3 (#2277)</li>
+<li>spread: move legacy wiki tests to spread (#2276)</li>
+<li>snap: pull early (#2278)</li>
+<li>build providers: re-exec as root (#2281)</li>
+<li>build providers: cleaner start and launch messaging (#2282)</li>
+<li>build providers: make use of time for multipass stop (#2284)</li>
+<li>meta: support relocatable prime for path verification (#2287)</li>
+<li>build providers: use multipass automatically when on darwin (#2288)</li>
+<li>snap: workaround the dirty tree (#2294)</li>
+<li>tests: use SNAPCRAFT_PACKAGE_TYPE everywhere (#2295)</li>
+<li>tests: move most tests to spread and reorder travis.yaml (#2301)</li>
+<li>snap: improve early base detection logic (#2309)</li>
+<li>meta: link the icon correctly across filesystems (#2313)</li>
+<li>project loader: remove remote parts support for bases (#2304)</li>
+<li>tests: use mocked plugins for list-plugins (#2315)</li>
+<li>tests: add spread suite for plainbox plugin (#2317)</li>
+<li>plugins: remove the tar-content plugin when using a base (#2319)</li>
+<li>plugins: remove the copy plugin when using a base (#2308)</li>
+<li>meta: add support for the license field (#2318)</li>
+<li>build providers: use the new snapcraft: remote for multipass (#2293)</li>
+<li>plugins: remove the python2 and python3 plugin when using a base (#2325)</li>
+<li>plugins: remove the ament plugin when using a base (#2324)</li>
+<li>plugins: remove implicit source (#2326)</li>
+<li>go plugin: support for bases (#2323)</li>
+<li>pluginhandler: remove legacy plugin loading without project (#2329)</li>
+<li>godeps plugin: support for bases (#2328)</li>
+<li>pluginhandler: remove big solidus workaround (#2330)</li>
+<li>pluginhandler: remove prepare, build and install scriptlets (#2327)</li>
+<li>waf plugin: support for bases (#2332)</li>
+<li>meson plugin: add support for bases (#2331)</li>
+<li>lifecycle: remove lxd support for bases (#2335)</li>
+<li>tests: remove dependency on snapcraft for integration tests (#2353)</li>
+<li>schema: enfore string for versions (#2334)</li>
+<li>lifecycle: switch to multipass by default (#2339)</li>
+<li>schema: remove the deprecated snap keyword for bases (#2344)</li>
+<li>tests: use valid snap names in unit tests (#2352)</li>
+<li>scons plugin: add support for bases (#2357)</li>
+<li>nodejs plugin: add support for bases (#2356)</li>
+<li>pluginhandler: library detection instead of injection (#2337)</li>
+<li>dotnet plugin: add support for bases (#2358)</li>
+<li>schema: remove deprecated plugin pull and build-properties (#2361)</li>
+<li>plainbox-provider plugin: add support for bases (#2360)</li>
+<li>multipass: change default CPU value (#2365)</li>
+<li>python plugin: add support for bases (#2362)</li>
+<li>maven plugin: add support for bases (#2364)</li>
+<li>gradle plugin: add support for bases (#2372)</li>
+<li>ant plugin: add support for bases (#2370)</li>
+<li>jdk plugin: remove jdk (#2376)</li>
+<li>build providers: destroy on create failures (#2374)</li>
+<li>cli: remove disable-parallel-build and geoip toggles (#2377)</li>
+<li>yaml loading: properly handle unhashable types (#2247)</li>
+<li>pluginhandler: stop using alias for snapcraftctl (#2251)</li>
+<li>local source: don&rsquo;t include .snapcraft directory (#2256)</li>
+<li>meta: take charge of environment used to run commands (#2257)</li>
+<li>cli: show trace if no tty (#2259)</li>
+<li>catkin plugin: use SnapcraftException (#2255)</li>
+<li>project_loader: add preflight check (#2250)</li>
+<li>project: catch parent YAML exceptions (#2263)</li>
+<li>tests: disable integration tests using snaps in bionic container (#2266)</li>
+<li>catkin, rosdep: stop using FileNotFoundErrors (#2270)</li>
+<li>sanity checks: allow snap/local dir (#2268)</li>
+<li>sanity checks: run properly on build VMs (#2279)</li>
+<li>snapcraft snap: refactor override-build into a script (#2283)</li>
+<li>config: change default outdated action to clean (#2286)</li>
+<li>snapcraft snap: vendor legacy snapcraft (#2285)</li>
+<li>schema: add &ldquo;legacy&rdquo; adapter type (#2262)</li>
+<li>sources: properly handle pull failures (#2292)</li>
+<li>packaging: pin click to v6 in requirements.txt (#2298)</li>
+<li>meta: put environment into runner instead of app wrapper (#2291)</li>
+<li>part grammar processor: lazily capture attributes from plugin (#2296)</li>
+<li>pluginhandler: update build should overwrite organize (#2290)</li>
+<li>requirements.txt: stop using pymacaroons-pynacl (#2302)</li>
+<li>project_loader: add build-environment part property (#2322)</li>
+<li>catkin, catkin-tools plugins: add support for bases (#2333)</li>
+<li>schema, meta: support layout (#2338)</li>
+<li>schema, meta: support app command-chain (#2341)</li>
+<li>schema, meta: add &ldquo;full&rdquo; app adapter (#2343)</li>
+<li>ruby plugin: add support for base (#2346)</li>
+<li>extensions: support adding root properties (#2347)</li>
+<li>extensions: remove root extensions (#2348)</li>
+<li>extensions: use extension docstring (#2349)</li>
+<li>extensions: parse all declared extensions before applying (#2350)</li>
+<li>extensions: cleanup and generic tests (#2355)</li>
+<li>{make,cmake,autotools} plugin: add support for bases (#2363)</li>
+<li>qmake plugin: add support for bases (#2366)</li>
+<li>{kbuild,kernel} plugin: add support for bases (#2368)</li>
+<li>tests: add spread test exercising multipass build VMs (#2367)</li>
+<li>plugins: remove jhbuild (#2371)</li>
+<li>rust plugin: add support for bases (#2373)</li>
+<li>sanity checks: verify that command-chain is not used with legacy adapter (#2375)</li>
+<li>cli: use the better snapcraft.io/account URL (#2280)</li>
+<li>storeapi: use structured data for the conflicted current value (#2316)</li>
+<li>rust plugin: do not ignore the cross compile target (#2264)</li>
+<li>nodejs plugin: add support for ppc64el and s390x (#2310) (#2310)</li>
+<li>nodejs plugin: update to the latest 8.x LTS version (#2342)</li>
+<li>yaml: replace yaml.safe_load() with CSafeLoader (#2218)</li>
+</ul>
+
+      </section>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
+          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
+      </footer>
+    </div>
+</article>
+    </div>
+
+    <nav class="pagination" role="navigation">
+      
+      <span class="page-number">&nbsp;</span>
+      
+          <a class="older-posts" href="../../posts/reporting-metrics-back-to-ubuntu/"><span class="hide">Previous Post</span> &rarr;</a>
+      
+    </nav>
+
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-3.0\/";  
+this.page.identifier = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-3.0\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://sergiusens.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</main>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="../../"></a> All rights reserved - 2018 <br>
+      
+    </section>
+    <nav class="site-footer-nav">
+        <a href="../../">Latest Posts</a>
+        
+        <a href="https://twitter.com/sergiusens" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/sergiusens" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/SergioSchvezov" target="_blank" rel="noopener">LinkedIn</a>
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-37640305-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+
+</body></html>
