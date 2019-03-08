@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/broader-use-of-bases-for-snaps/">
-      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
     </a>    
     
 
@@ -124,10 +124,13 @@
 
 <p>But from snapcraft&rsquo;s point of view, the <code>base</code> keyword can also be used with snap types of <code>gadget</code> and <code>kernel</code>, and these would then work internally inside snapd.</p>
 
-<p>Discussions at the sprint the following initial questions about using <em>base</em> with gadget and kernel snaps:
-- Is it useful?
-- How would everything connect, internally, inside snapd.
-- How would it affect the runtime? (as a kernel or gadget snap could be <em>userspace</em> independent, if all the potential hooks they used were architecture independent and would require a base for the cases, it would be relevant.</p>
+<p>Discussions at the sprint the following initial questions about using <em>base</em> with gadget and kernel snaps:</p>
+
+<ul>
+<li>Is it useful?</li>
+<li>How would everything connect, internally, inside snapd.</li>
+<li>How would it affect the runtime? (as a kernel or gadget snap could be <em>userspace</em> independent, if all the potential hooks they used were architecture independent and would require a base for the cases, it would be relevant.</li>
+</ul>
 
 <p>As a result of these questions, for cases where a <code>base</code> is not required, we are introducing a new <code>base</code> called <em>none</em>. From a runtime perspective, this will is a real base but is has nothing in it.</p>
 
@@ -147,10 +150,13 @@
 
 <h2 id="summary">Summary</h2>
 
-<p>Here&rsquo;s what you&rsquo;ll be able to do with the upcoming releases of snapcraft:
-- Use <code>none</code> as a base (requires work in snapd as well).
-- Specify a <code>build-base</code> when using <code>base: none</code>.
-- Use <code>core</code> as a base in <code>snapcraft.yaml</code>.</p>
+<p>Here&rsquo;s what you&rsquo;ll be able to do with the upcoming releases of snapcraft:</p>
+
+<ul>
+<li>Use <code>none</code> as a base (requires work in snapd as well).</li>
+<li>Specify a <code>build-base</code> when using <code>base: none</code>.</li>
+<li>Use <code>core</code> as a base in <code>snapcraft.yaml</code>.</li>
+</ul>
 
 <p>And you can already use the <code>base</code> keyword for snaps of type <code>app</code>, <code>kernel</code> and <code>gadget</code>.</p>
 
