@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Snapcraft 3.1 &middot; </title>
+    <title>Broader use of bases for snaps &middot; </title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,27 +12,27 @@
     <link rel="shortcut icon" href="../../favicon.ico" />
     <link rel="canonical" href="../../" />
 
-     <meta name="description" content="snapcraft 3.1 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the snapcra" /> 
+     <meta name="description" content="We have regular Engineering Sprints at Canonical. These are a great opportunity for engineering teams to come together and discuss progress and roadmaps, as wel" /> 
 
      
     
     <meta name="twitter:card" content="summary"/>
     
  
-    <meta name="twitter:title" content="Snapcraft 3.1"/>
-    <meta name="twitter:description" content="snapcraft 3.1 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the snapcra"/>
-    <meta name="twitter:url" content="/posts/snapcraft-3.1/" />
+    <meta name="twitter:title" content="Broader use of bases for snaps"/>
+    <meta name="twitter:description" content="We have regular Engineering Sprints at Canonical. These are a great opportunity for engineering teams to come together and discuss progress and roadmaps, as wel"/>
+    <meta name="twitter:url" content="/posts/broader-use-of-bases-for-snaps/" />
     <meta name="twitter:site" content="@sergiusens"/>
 
     <meta property="og:site_name" content="" />
-    <meta property="og:title" content="Snapcraft 3.1 &middot; I me mine" />
-    <meta property="og:url" content="/posts/snapcraft-3.1/" />
+    <meta property="og:title" content="Broader use of bases for snaps &middot; I me mine" />
+    <meta property="og:url" content="/posts/broader-use-of-bases-for-snaps/" />
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="snapcraft 3.1 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the snapcra" />
+    <meta property="og:description" content="We have regular Engineering Sprints at Canonical. These are a great opportunity for engineering teams to come together and discuss progress and roadmaps, as wel" />
 
-    <meta property="article:published_time" content="2019-02-05T14:48:31-03:00" />
+    <meta property="article:published_time" content="2019-03-08T12:18:53-03:00" />
     <meta property="article:tag" content="snappy" /><meta property="article:tag" content="snapcraft" /><meta property="article:tag" content="development" />
 
     <meta property="og:image" content="img/banner.jpg"/>
@@ -94,127 +94,65 @@
     <div class="post-feed">
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="../../posts/snapcraft-3.1/">
-      <div class="post-card-image" style="background-image: url(/defimg/4.jpg)"></div>
+    <a class="post-card-image-link" href="../../posts/broader-use-of-bases-for-snaps/">
+      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
     </a>    
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="../../posts/snapcraft-3.1/">
+      <a class="post-card-content-link" href="../../posts/broader-use-of-bases-for-snaps/">
           <header class="post-card-header">
               <span class="post-card-tags">
               #snappy 
               #snapcraft 
               #development  </span>
               
-              <h2 class="post-card-title">Snapcraft 3.1</h2>
+              <h2 class="post-card-title">Broader use of bases for snaps</h2>
           </header>
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
-          5 February 2019
+          8 March 2019
           
 
-<p>snapcraft 3.1 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the <a href="https://github.com/snapcore/snapcraft/releases/tag/3.0">snapcraft 3.0 release</a>.</p>
+<p>We have regular <em>Engineering Sprints</em> at Canonical. These are a great opportunity for engineering teams to come together and discuss progress and roadmaps, as well as code and work together. Many of us have just returned from one such event in <em>Malta</em>, getting home just before the widely report storm hit the island (see <a href="https://www.timesofmalta.com/articles/view/20190224/local/gale-force-winds-cause-substantial-damage-but-no-injuries-reported.702795">Destruction across Malta as gale-force winds batter islands</a>).:w</p>
 
-<p>If you are already on the <code>stable</code> channel for snapcraft then all you need to do is wait for the snap to be refreshed.</p>
+<p>And one of the things we discussed over the course of that week was the implications of using <em>bases</em> when snaps use <code>type</code> other than <code>app</code> (a base is a special kind of snap that provides a minimal set of libraries common to most applications).</p>
 
-<p>The full <a href="https://github.com/snapcore/snapcraft/releases/tag/3.1">release notes</a> are replicated here below</p>
+<h2 id="bases-for-more-than-apps">Bases for more than apps</h2>
 
-<h2 id="build-environments">Build Environments</h2>
+<p>So far, the only place developers have been using bases is when they declare <code>type: app</code> in their <em>snap.yaml</em>, and it&rsquo;s also the implicit snap <code>type</code> when nothing is declared.</p>
 
-<p>It is now possible, <em>when using the <code>base</code> keyword</em>, to once again clean parts. To do so run:</p>
+<p>But from snapcraft&rsquo;s point of view, the <code>base</code> keyword can also be used with snap types of <code>gadget</code> and <code>kernel</code>, and these would then work internally inside snapd.</p>
 
-<pre><code>snapcraft clean &lt;part-name&gt;
-</code></pre>
+<p>Discussions at the sprint the following initial questions about using <em>base</em> with gadget and kernel snaps:
+- Is it useful?
+- How would everything connect, internally, inside snapd.
+- How would it affect the runtime? (as a kernel or gadget snap could be <em>userspace</em> independent, if all the potential hooks they used were architecture independent and would require a base for the cases, it would be relevant.</p>
 
-<p>Cleaning individual steps from a specific part, previously provided by the <code>--step</code> option to <code>clean</code>, is being redesigned to be more intuitive and straight forward in its use.</p>
+<p>As a result of these questions, for cases where a <code>base</code> is not required, we are introducing a new <code>base</code> called <em>none</em>. From a runtime perspective, this will is a real base but is has nothing in it.</p>
 
-<h2 id="core">Core</h2>
+<p>But what will happen at build time? Where are builds supposed to take place? Where do we build some other snap types we haven&rsquo;t mentioned before, such as <code>base</code> or <code>snapd</code>?</p>
 
-<h3 id="before-and-after">before and after</h3>
+<p>To solve the above, we are also introducing a new keyword, <code>build-base</code>. This takes a value, such as <code>core18</code>, which becomes the build environment used to create snaps targeting, for example, <code>core18</code>.</p>
 
-<p>The <code>before</code> and <code>after</code> keywords, used for ordering service launching within a snap, are now properly supported in <code>snapcraft</code>.</p>
+<h2 id="status-of-the-core16-base">Status of the core16 base</h2>
 
-<h3 id="appstream-extractor">Appstream extractor</h3>
+<p>With the release of Snapcraft 3.0, all new features are now tied to the use of the <code>base</code> keyword. If <em>base</em> isn&rsquo;t specified, your snap will build just as it used to, only without the new features. This way, we don&rsquo;t force anyone to use or migrate to our new features and can maintain a only single version of snapcraft, regardless of whether you&rsquo;re using bases or do not.</p>
 
-<p>The appstream metadata extractor can now properly handle tags inside the relevant nodes and properly filter <code>xml:lang</code>, such that:</p>
+<h2 id="core16-base-status">core16 base status</h2>
 
-<pre><code class="language-xml">  &lt;description&gt;
-    &lt;p&gt;List:&lt;/p&gt;
-    &lt;p xml:lang=&quot;es&quot;&gt;Lista:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;First item.&lt;/li&gt;
-      &lt;li xml:lang=&quot;es&quot;&gt;Primer item.&lt;/li&gt;
-      &lt;li&gt;Second item.&lt;/li&gt;
-      &lt;li xml:lang=&quot;es&quot;&gt;Segundo item.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/description&gt;
-</code></pre>
+<p>We originally planned to have a <code>core16</code> base snap to support a 16.04 base with the release of Snapcraft 3.0. However, the release of <em>core16</em> is currently behind schedule.</p>
 
-<p>Is presented as the following description in <code>snap.yaml</code>:</p>
+<p>To help mitigate the effects of this delay, we&rsquo;re going to activate a slight trick in snapcraft. The trick is that snapcraft will soon allow specifying <code>core</code> as a base but it will write out a <code>snap.yaml</code> with no base. This means that <code>core</code> essentially <strong>is</strong> a base internally - it&rsquo;s just treated differently because it&rsquo;s coupled with snapd (which, with the <code>core16</code> work, has also been stripped out into its own snap).</p>
 
-<pre><code>List:
+<h2 id="summary">Summary</h2>
 
-- First item.
-- Second item.
-</code></pre>
+<p>Here&rsquo;s what you&rsquo;ll be able to do with the upcoming releases of snapcraft:
+- Use <code>none</code> as a base (requires work in snapd as well).
+- Specify a <code>build-base</code> when using <code>base: none</code>.
+- Use <code>core</code> as a base in <code>snapcraft.yaml</code>.</p>
 
-<p>Additionally, desktop files are now properly found from the appstream <code>launchable</code> entries or by falling back to legacy mode and inferring the desktop file from the appstream <code>id</code>.</p>
-
-<h2 id="plugins">Plugins</h2>
-
-<h3 id="cmake">cmake</h3>
-
-<p>The plugin can now leverage <code>build-snaps</code> into the build environment, when any given <code>build-snaps</code> entry exists for a part that uses the <code>cmake</code> plugin, the plugin will make use of <code>CMAKE_FIND_ROOT_PATH</code> so that libraries and headers from that snap are preferred.</p>
-
-<p>Additionally, <code>cmake</code> primitives are now used to drive the build instead of just calling <code>make</code>.</p>
-
-<p>These features have already been used to create an initial set of KDE applications leveraging <code>core18</code> as a base as described on the <a href="https://snapcraft.io/blog/kde-apps-at-the-snap-of-your-fingers">KDE apps at the snap of your fingers</a> article.</p>
-
-<h3 id="rust">rust</h3>
-
-<p>The <code>rust</code> plugin has been refactored in a backwards compatible way to work better with the non-legacy <code>rustup</code> tool.</p>
-
-<h2 id="platforms">Platforms</h2>
-
-<h3 id="os-x">OS X</h3>
-
-<p>When using <code>snapcraft</code> with homebrew for the first time, if <code>multipass</code> is not found, the user will be prompted to install it before proceeding.</p>
-
-<p>The issues and features worked on for 3.1 can be seen on the <a href="https://launchpad.net/snapcraft/+milestone/3.1">3.1 launchpad milestone</a> which are reflected in the following change list:</p>
-
-<ul>
-<li>cmake plugin: use native primitives (#2397)</li>
-<li>cmake plugin: use build snaps to search paths (#2399)</li>
-<li>static: update to the latest flake8 (#2420)</li>
-<li>project: state file path change (#2419)</li>
-<li>tests: do not use <code>bash</code> as a reserved package name on staging (#2423)</li>
-<li>nodejs plugin: fail gracefully when a package.json is missing (#2424)</li>
-<li>tests: use fixed version for idna in plainbox (#2426)</li>
-<li>tests: remove obsolete snap and external tests (#2421)</li>
-<li>snap: re-add pyc files for snapcraft (#2425)</li>
-<li>tests: increase test timeout for plainbox (#2428)</li>
-<li>lifecycle: query for multipass install on darwin (#2427)</li>
-<li>cli: fix usage string in help command (#2429)</li>
-<li>repo: document package purpose (#2390)</li>
-<li>extractors: better appstream support for descriptions (#2430)</li>
-<li>tests: re-enable spread tests on gce</li>
-<li>rust plugin: refactor to use the latest rustup</li>
-<li>tests: temporarily disable osx tests</li>
-<li>snap: add build-package for xml</li>
-<li>appstream extractor: properly find desktop files</li>
-<li>appstream extractor: support legacy launchables</li>
-<li>snap: add xslt dependencies for lxml</li>
-<li>repo,baseplugin: support trusting repo keys (#2437)</li>
-<li>schema: allow before and after (#2443)</li>
-<li>meta: make hooks executable instead of complaining they are not (#2440)</li>
-<li>build providers: remove SIGUSR1 signal ignore workaround for multipass (#2447)</li>
-<li>cli: enable cleaning of parts (#2442)</li>
-<li>tests: appstream unit tests are xenial specific</li>
-<li>tests: skip rust unit tests on s390x</li>
-<li>tests: use more fine grained assertions in lifecycle tests</li>
-<li>tests: remove rust revision testing for i386</li>
-</ul>
+<p>And you can already use the <code>base</code> keyword for snaps of type <code>app</code>, <code>kernel</code> and <code>gadget</code>.</p>
 
       </section>
 
@@ -228,11 +166,9 @@
 
     <nav class="pagination" role="navigation">
       
-          <a class="newer-posts" href="../../posts/broader-use-of-bases-for-snaps/">&larr; <span class="hide">Next Post</span></a>
-      
       <span class="page-number">&nbsp;</span>
       
-          <a class="older-posts" href="../../posts/snapcraft-3.0/"><span class="hide">Previous Post</span> &rarr;</a>
+          <a class="older-posts" href="../../posts/snapcraft-3.1/"><span class="hide">Previous Post</span> &rarr;</a>
       
     </nav>
 
@@ -247,8 +183,8 @@
 
 
 var disqus_config = function () {
-this.page.url = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-3.1\/";  
-this.page.identifier = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-3.1\/"; 
+this.page.url = "http:\/\/blog.sergiusens.org\/posts\/broader-use-of-bases-for-snaps\/";  
+this.page.identifier = "http:\/\/blog.sergiusens.org\/posts\/broader-use-of-bases-for-snaps\/"; 
 };
 
 (function() { 

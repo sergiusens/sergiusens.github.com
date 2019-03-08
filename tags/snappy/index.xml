@@ -6,10 +6,20 @@
     <description>Recent content in Snappy on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Feb 2019 14:48:31 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 08 Mar 2019 12:18:53 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/tags/snappy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Broader use of bases for snaps</title>
+      <link>http://blog.sergiusens.org/posts/broader-use-of-bases-for-snaps/</link>
+      <pubDate>Fri, 08 Mar 2019 12:18:53 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/broader-use-of-bases-for-snaps/</guid>
+      <description>We have regular Engineering Sprints at Canonical. These are a great opportunity for engineering teams to come together and discuss progress and roadmaps, as well as code and work together. Many of us have just returned from one such event in Malta, getting home just before the widely report storm hit the island (see Destruction across Malta as gale-force winds batter islands).:w
+And one of the things we discussed over the course of that week was the implications of using bases when snaps use type other than app (a base is a special kind of snap that provides a minimal set of libraries common to most applications).</description>
+    </item>
     
     <item>
       <title>Snapcraft 3.1</title>
