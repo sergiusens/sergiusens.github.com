@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.sergiusens.org/posts/snapcraft-3.3/</loc>
+    <lastmod>2019-04-03T14:05:04-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.sergiusens.org/posts/broader-use-of-bases-for-snaps/</loc>
     <lastmod>2019-03-08T12:18:53-03:00</lastmod>
   </url>
@@ -114,7 +119,7 @@
   
   <url>
     <loc>http://blog.sergiusens.org/</loc>
-    <lastmod>2019-03-08T12:18:53-03:00</lastmod>
+    <lastmod>2019-04-03T14:05:04-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,7 +142,7 @@
   
   <url>
     <loc>http://blog.sergiusens.org/tags/development/</loc>
-    <lastmod>2019-03-08T12:18:53-03:00</lastmod>
+    <lastmod>2019-04-03T14:05:04-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -161,19 +166,19 @@
   
   <url>
     <loc>http://blog.sergiusens.org/posts/</loc>
-    <lastmod>2019-03-08T12:18:53-03:00</lastmod>
+    <lastmod>2019-04-03T14:05:04-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.sergiusens.org/tags/snapcraft/</loc>
-    <lastmod>2019-03-08T12:18:53-03:00</lastmod>
+    <lastmod>2019-04-03T14:05:04-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.sergiusens.org/tags/snappy/</loc>
-    <lastmod>2019-03-08T12:18:53-03:00</lastmod>
+    <lastmod>2019-04-03T14:05:04-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -191,7 +196,7 @@
   
   <url>
     <loc>http://blog.sergiusens.org/categories/ubuntu/</loc>
-    <lastmod>2019-02-05T14:48:31-03:00</lastmod>
+    <lastmod>2019-04-03T14:05:04-03:00</lastmod>
     <priority>0</priority>
   </url>
   
