@@ -6,31 +6,13 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Aug 2018 20:22:04 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 03 Apr 2019 14:05:04 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bangho</title>
-      <link>http://blog.sergiusens.org/tags/bangho/</link>
-      <pubDate>Wed, 08 Aug 2018 20:22:04 -0300</pubDate>
-      
-      <guid>http://blog.sergiusens.org/tags/bangho/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Conference</title>
-      <link>http://blog.sergiusens.org/tags/conference/</link>
-      <pubDate>Wed, 23 Aug 2017 13:29:02 -0300</pubDate>
-      
-      <guid>http://blog.sergiusens.org/tags/conference/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
+      <title>development</title>
       <link>http://blog.sergiusens.org/tags/development/</link>
       <pubDate>Wed, 03 Apr 2019 14:05:04 -0300</pubDate>
       
@@ -39,25 +21,7 @@
     </item>
     
     <item>
-      <title>Hardware</title>
-      <link>http://blog.sergiusens.org/tags/hardware/</link>
-      <pubDate>Wed, 08 Aug 2018 20:22:04 -0300</pubDate>
-      
-      <guid>http://blog.sergiusens.org/tags/hardware/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubuntu</title>
-      <link>http://blog.sergiusens.org/tags/kubuntu/</link>
-      <pubDate>Tue, 17 Jul 2018 09:50:20 -0300</pubDate>
-      
-      <guid>http://blog.sergiusens.org/tags/kubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Snapcraft</title>
+      <title>snapcraft</title>
       <link>http://blog.sergiusens.org/tags/snapcraft/</link>
       <pubDate>Wed, 03 Apr 2019 14:05:04 -0300</pubDate>
       
@@ -66,7 +30,7 @@
     </item>
     
     <item>
-      <title>Snappy</title>
+      <title>snappy</title>
       <link>http://blog.sergiusens.org/tags/snappy/</link>
       <pubDate>Wed, 03 Apr 2019 14:05:04 -0300</pubDate>
       
@@ -75,7 +39,43 @@
     </item>
     
     <item>
-      <title>Summit</title>
+      <title>bangho</title>
+      <link>http://blog.sergiusens.org/tags/bangho/</link>
+      <pubDate>Wed, 08 Aug 2018 20:22:04 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/tags/bangho/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardware</title>
+      <link>http://blog.sergiusens.org/tags/hardware/</link>
+      <pubDate>Wed, 08 Aug 2018 20:22:04 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubuntu</title>
+      <link>http://blog.sergiusens.org/tags/kubuntu/</link>
+      <pubDate>Tue, 17 Jul 2018 09:50:20 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/tags/kubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conference</title>
+      <link>http://blog.sergiusens.org/tags/conference/</link>
+      <pubDate>Wed, 23 Aug 2017 13:29:02 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/tags/conference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>summit</title>
       <link>http://blog.sergiusens.org/tags/summit/</link>
       <pubDate>Fri, 12 Feb 2016 16:31:57 -0300</pubDate>
       
