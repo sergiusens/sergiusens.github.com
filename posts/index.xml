@@ -6,10 +6,22 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Apr 2019 14:05:04 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 16:32:17 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Snapcraft 3.4</title>
+      <link>http://blog.sergiusens.org/posts/snapcraft-3.4/</link>
+      <pubDate>Fri, 19 Apr 2019 16:32:17 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/snapcraft-3.4/</guid>
+      <description>I am really excited about this release as it brings two features I have personally been missing:
+ the option to --use-lxd the possibility to snapcraft try  If you are already on the stable channel for snapcraft then all you need to do is wait for the snap to be refreshed.
+The full release notes are replicated here below
+snapcraft snap The snapcraft snap has now moved to using base: core, this unlocks snapcraft into using the snapcraft 3.</description>
+    </item>
     
     <item>
       <title>Snapcraft 3.3</title>

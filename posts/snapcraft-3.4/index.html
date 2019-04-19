@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Snappy rolling back on kernel panic &middot; </title>
+    <title>Snapcraft 3.4 &middot; </title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,28 +12,31 @@
     <link rel="shortcut icon" href="../../favicon.ico" />
     <link rel="canonical" href="../../" />
 
-     <meta name="description" content="Image you get an update and the kernel panics with that update, what are you to do? Suppose now that you have a snappy based system, this is automatically solve" /> 
+     <meta name="description" content="I am really excited about this release as it brings two features I have personally been missing:
+ the option to --use-lxd the possibility to snapcraft try  If y" /> 
 
      
     
     <meta name="twitter:card" content="summary"/>
     
  
-    <meta name="twitter:title" content="Snappy rolling back on kernel panic"/>
-    <meta name="twitter:description" content="Image you get an update and the kernel panics with that update, what are you to do? Suppose now that you have a snappy based system, this is automatically solve"/>
-    <meta name="twitter:url" content="/posts/snappy_rolling_back_on_kernel_panic/" />
+    <meta name="twitter:title" content="Snapcraft 3.4"/>
+    <meta name="twitter:description" content="I am really excited about this release as it brings two features I have personally been missing:
+ the option to --use-lxd the possibility to snapcraft try  If y"/>
+    <meta name="twitter:url" content="/posts/snapcraft-3.4/" />
     <meta name="twitter:site" content="@sergiusens"/>
 
     <meta property="og:site_name" content="" />
-    <meta property="og:title" content="Snappy rolling back on kernel panic &middot; I me mine" />
-    <meta property="og:url" content="/posts/snappy_rolling_back_on_kernel_panic/" />
+    <meta property="og:title" content="Snapcraft 3.4 &middot; I me mine" />
+    <meta property="og:url" content="/posts/snapcraft-3.4/" />
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Image you get an update and the kernel panics with that update, what are you to do? Suppose now that you have a snappy based system, this is automatically solve" />
+    <meta property="og:description" content="I am really excited about this release as it brings two features I have personally been missing:
+ the option to --use-lxd the possibility to snapcraft try  If y" />
 
-    <meta property="article:published_time" content="2015-05-08T12:31:49-03:00" />
-    <meta property="article:tag" content="snappy" />
+    <meta property="article:published_time" content="2019-04-19T16:32:17-03:00" />
+    
 
     <meta property="og:image" content="img/banner.jpg"/>
 
@@ -94,50 +97,124 @@
     <div class="post-feed">
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="../../posts/snappy_rolling_back_on_kernel_panic/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+    <a class="post-card-image-link" href="../../posts/snapcraft-3.4/">
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
     </a>    
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="../../posts/snappy_rolling_back_on_kernel_panic/">
+      <a class="post-card-content-link" href="../../posts/snapcraft-3.4/">
           <header class="post-card-header">
-              <span class="post-card-tags">
-              #snappy  </span>
               
-              <h2 class="post-card-title">Snappy rolling back on kernel panic</h2>
+              <h2 class="post-card-title">Snapcraft 3.4</h2>
           </header>
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
-          8 May 2015
-          <p>Image you get an update and the kernel panics with that update, what are you to
-do? Suppose now that you have a snappy based system, this is automatically
-solved for you.</p>
+          19 April 2019
+          
 
-<p>Here’s a short video showing this on a Beagle Bone Black, the concept is quite
-simple, if there is a panic, we revert to the last known state. In this video I
-inject an initrd that panics on boot after issuing a <code>snappy update</code> and before
-rebooting into the update.</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/xIHEy5saBa8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<p>In this video you observe the following:</p>
+<p>I am really excited about this release as it brings two features I have personally
+been missing:</p>
 
 <ul>
-<li>Manually checking for updates.</li>
-<li>Manually applying the updates.</li>
-<li>How the a/b boot selection is done.</li>
-<li>Implicitly observe the internal (<em>subject to change</em>) layout of <code>snappy-boot</code>
-and <code>system-a</code> or <code>system-b</code> selection.</li>
-<li>Rebooting into the new kernel.</li>
-<li>Observing a panic and rebooting back into the working system.</li>
+<li>the option to <code>--use-lxd</code></li>
+<li>the possibility to <code>snapcraft try</code></li>
 </ul>
 
-<p>In the normal case this would seldom happen (the broken boot aside) as the
-autopiloting feature is enabled by default today, which you can check by
-running <code>snappy config ubuntu-core</code></p>
+<p>If you are already on the <code>stable</code> channel for snapcraft then all you need to do is wait for the snap to be refreshed.</p>
+
+<p>The full <a href="https://github.com/snapcore/snapcraft/releases/tag/3.4">release notes</a> are replicated here below</p>
+
+<hr />
+
+<h2 id="snapcraft-snap">snapcraft snap</h2>
+
+<p>The snapcraft snap has now moved to using <code>base: core</code>, this unlocks snapcraft into using the snapcraft 3.0 features in its own <code>snapcraft.yaml</code> in order to build snapcraft from snapcraft (<em>lots of snapcraft in that sentence!</em>)</p>
+
+<h2 id="core">Core</h2>
+
+<h3 id="new-build-provider-support-lxd">New build provider support: LXD</h3>
+
+<p>You can now use LXD as a build provider, operations supported by the default mode (using multipass) are also supported with LXD, such as:</p>
+
+<ul>
+<li><code>--shell</code></li>
+<li><code>--shell-after</code></li>
+<li><code>--debug</code></li>
+</ul>
+
+<p>To trigger use of LXD, the snapcraft lifecycle commands (<code>pull</code>, <code>build</code>, <code>stage</code> and <code>prime</code>, together with <code>clean</code>) need use the <code>--use-lxd</code> option.</p>
+
+<p>This feature is introduced early to get feedback, but is not production ready unless it is a discardable CI environment. Early adopters may see future (with no automatic migration) changes to:</p>
+
+<ul>
+<li>storage setups</li>
+<li>default profiles</li>
+<li>use of LXD projects</li>
+</ul>
+
+<h3 id="snapcraft-try">snapcraft try</h3>
+
+<p>By default, when triggering builds in a clean environment, it is sometimes desirable to have the <code>prime</code> directory locally to be able to <code>snap try prime</code>. For this reason <code>snapcraft try</code> will run through the lifecycle all the way to <code>prime</code>(if not run before) and offer the <code>prime</code> directory locally.</p>
+
+<blockquote>
+<p>While this version of snapcraft is not on stable, when combined with <code>--use-lxd</code>, one must pass <code>SNAPCRAFT_BUILD_ENVIRONMENT_CHANNEL_SNAPCRAFT=latest/candidate</code> to snapcraft. Support for snap injection for LXD will be worked on when snapd 2.38 is released.</p>
+</blockquote>
+
+<h2 id="plugins">Plugins</h2>
+
+<h3 id="go">go</h3>
+
+<p>The go plugin now works more broadly when using <code>classic</code> confinement. This should avoid the necessity of specifying <code>no-patchelf</code> for parts failing to patch correctly.</p>
+
+<h3 id="catkin">catkin</h3>
+
+<p>The catkin plugin has been enhanced to support stage-snaps to satisfy dependencies, a detailed write up can be found on the <a href="https://snapcraft.io/blog/speed-up-your-ros-snap-builds">snapcraft blog</a>.</p>
+
+<hr />
+
+<p>The issues and features worked on for 3.4 can be seen on the <a href="https://bugs.launchpad.net/snapcraft/+milestone/3.4">3.4</a> launchpad milestone which are reflected in the following change list:</p>
+
+<h4 id="sergio-schvezov">Sergio Schvezov</h4>
+
+<ul>
+<li>build providers: modify the _run signature (#2511) (LP: #1821401)</li>
+<li>build providers: support for provider setup (#2515) (LP: #1821586)</li>
+<li>readme: add snap store badge (#2516)</li>
+<li>build providers: initial support for LXD (#2509) (LP: #1805221)</li>
+<li>cli: cleanup environment detection (#2521)</li>
+<li>build providers: add API for friendly instance type names (#2522)</li>
+<li>snap: set core as a base (#2520)</li>
+<li>ci: improve travis integration conditionals (#2523)</li>
+<li>cli: snapcraft try (#2524) (LP: #1805212)</li>
+<li>build providers: idempotent destroy for LXD (#2529)</li>
+<li>tests: add missing pylxd Build-Depends</li>
+<li>tests: restrict catking stage-snap tests arches</li>
+</ul>
+
+<h4 id="claudio-matsuoka">Claudio Matsuoka</h4>
+
+<ul>
+<li>repo: handle deb package fetch error (#2513)</li>
+<li>project: ensure yaml load returns a dictionary (#2517)</li>
+<li>many: better handling of appstream icons (#2512) (LP: #1814898)</li>
+<li>go plugin, elf: use patchelf 0.10 and relink dynamic go binaries (#2519)
+(LP: #1805205)</li>
+<li>snap: use snapcraft&rsquo;s 0.10 patchelf branch (#2528)</li>
+<li>snap: revert to patchelf 0.9 with local patches (#2531)</li>
+</ul>
+
+<h4 id="adanhawth">adanhawth</h4>
+
+<ul>
+<li>schema: add more detail wrt numeric version errors (#2506)</li>
+</ul>
+
+<h4 id="kyle-fazzari">Kyle Fazzari</h4>
+
+<ul>
+<li>catkin plugin: check stage-snaps for ROS dependencies (#2525)</li>
+</ul>
 
       </section>
 
@@ -151,11 +228,9 @@ running <code>snappy config ubuntu-core</code></p>
 
     <nav class="pagination" role="navigation">
       
-          <a class="newer-posts" href="../../posts/the-github-or-launchpad-dilemma/">&larr; <span class="hide">Next Post</span></a>
-      
       <span class="page-number">&nbsp;</span>
       
-          <a class="older-posts" href="../../posts/updates-in-snappy-and-ubunu-device-flash/"><span class="hide">Previous Post</span> &rarr;</a>
+          <a class="older-posts" href="../../posts/snapcraft-3.3/"><span class="hide">Previous Post</span> &rarr;</a>
       
     </nav>
 
@@ -170,8 +245,8 @@ running <code>snappy config ubuntu-core</code></p>
 
 
 var disqus_config = function () {
-this.page.url = "http:\/\/blog.sergiusens.org\/posts\/snappy_rolling_back_on_kernel_panic\/";  
-this.page.identifier = "http:\/\/blog.sergiusens.org\/posts\/snappy_rolling_back_on_kernel_panic\/"; 
+this.page.url = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-3.4\/";  
+this.page.identifier = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-3.4\/"; 
 };
 
 (function() { 
