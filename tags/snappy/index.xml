@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>snappy on </title>
@@ -189,7 +189,7 @@ Some things have change, if you are tracking the bleeding edge you will notice a
       <guid>http://blog.sergiusens.org/posts/preliminary-support-for-dtb-override-from-oem-snaps/</guid>
       <description>Today the always in motion ppa ppa:snappy-dev/tools has landed support for overriding the dtb provided by the platform in the device part with one provided by the oem snap.
 The package.yaml for the oem snap has been extended a bit to support this, an example follows for extending the am335x-boneblack platform.
-name: mydevice.sergiusens vendor: sergiusens icon: meta/icon.png version: 1.0 type: oem branding: name: My device subname: Sergiusens Inc. store: oem-key: 123456 hardware: dtb: mydtb.</description>
+The path hardware/dtb key in the yaml holds a value which is the path to the dtb withing the package, so in this case, I put mydtb.</description>
     </item>
     
     <item>

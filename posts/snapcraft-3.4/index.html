@@ -40,7 +40,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -98,7 +98,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snapcraft-3.4/">
-      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
     </a>    
     
 
@@ -111,72 +111,45 @@
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
           19 April 2019
-          
-
-<p>I am really excited about this release as it brings two features I have personally
+          <p>I am really excited about this release as it brings two features I have personally
 been missing:</p>
-
 <ul>
 <li>the option to <code>--use-lxd</code></li>
 <li>the possibility to <code>snapcraft try</code></li>
 </ul>
-
 <p>If you are already on the <code>stable</code> channel for snapcraft then all you need to do is wait for the snap to be refreshed.</p>
-
 <p>The full <a href="https://github.com/snapcore/snapcraft/releases/tag/3.4">release notes</a> are replicated here below</p>
-
-<hr />
-
+<hr>
 <h2 id="snapcraft-snap">snapcraft snap</h2>
-
 <p>The snapcraft snap has now moved to using <code>base: core</code>, this unlocks snapcraft into using the snapcraft 3.0 features in its own <code>snapcraft.yaml</code> in order to build snapcraft from snapcraft (<em>lots of snapcraft in that sentence!</em>)</p>
-
 <h2 id="core">Core</h2>
-
 <h3 id="new-build-provider-support-lxd">New build provider support: LXD</h3>
-
 <p>You can now use LXD as a build provider, operations supported by the default mode (using multipass) are also supported with LXD, such as:</p>
-
 <ul>
 <li><code>--shell</code></li>
 <li><code>--shell-after</code></li>
 <li><code>--debug</code></li>
 </ul>
-
 <p>To trigger use of LXD, the snapcraft lifecycle commands (<code>pull</code>, <code>build</code>, <code>stage</code> and <code>prime</code>, together with <code>clean</code>) need use the <code>--use-lxd</code> option.</p>
-
 <p>This feature is introduced early to get feedback, but is not production ready unless it is a discardable CI environment. Early adopters may see future (with no automatic migration) changes to:</p>
-
 <ul>
 <li>storage setups</li>
 <li>default profiles</li>
 <li>use of LXD projects</li>
 </ul>
-
 <h3 id="snapcraft-try">snapcraft try</h3>
-
 <p>By default, when triggering builds in a clean environment, it is sometimes desirable to have the <code>prime</code> directory locally to be able to <code>snap try prime</code>. For this reason <code>snapcraft try</code> will run through the lifecycle all the way to <code>prime</code>(if not run before) and offer the <code>prime</code> directory locally.</p>
-
 <blockquote>
 <p>While this version of snapcraft is not on stable, when combined with <code>--use-lxd</code>, one must pass <code>SNAPCRAFT_BUILD_ENVIRONMENT_CHANNEL_SNAPCRAFT=latest/candidate</code> to snapcraft. Support for snap injection for LXD will be worked on when snapd 2.38 is released.</p>
 </blockquote>
-
 <h2 id="plugins">Plugins</h2>
-
 <h3 id="go">go</h3>
-
 <p>The go plugin now works more broadly when using <code>classic</code> confinement. This should avoid the necessity of specifying <code>no-patchelf</code> for parts failing to patch correctly.</p>
-
 <h3 id="catkin">catkin</h3>
-
 <p>The catkin plugin has been enhanced to support stage-snaps to satisfy dependencies, a detailed write up can be found on the <a href="https://snapcraft.io/blog/speed-up-your-ros-snap-builds">snapcraft blog</a>.</p>
-
-<hr />
-
+<hr>
 <p>The issues and features worked on for 3.4 can be seen on the <a href="https://bugs.launchpad.net/snapcraft/+milestone/3.4">3.4</a> launchpad milestone which are reflected in the following change list:</p>
-
 <h4 id="sergio-schvezov">Sergio Schvezov</h4>
-
 <ul>
 <li>build providers: modify the _run signature (#2511) (LP: #1821401)</li>
 <li>build providers: support for provider setup (#2515) (LP: #1821586)</li>
@@ -191,9 +164,7 @@ been missing:</p>
 <li>tests: add missing pylxd Build-Depends</li>
 <li>tests: restrict catking stage-snap tests arches</li>
 </ul>
-
 <h4 id="claudio-matsuoka">Claudio Matsuoka</h4>
-
 <ul>
 <li>repo: handle deb package fetch error (#2513)</li>
 <li>project: ensure yaml load returns a dictionary (#2517)</li>
@@ -203,15 +174,11 @@ been missing:</p>
 <li>snap: use snapcraft&rsquo;s 0.10 patchelf branch (#2528)</li>
 <li>snap: revert to patchelf 0.9 with local patches (#2531)</li>
 </ul>
-
 <h4 id="adanhawth">adanhawth</h4>
-
 <ul>
 <li>schema: add more detail wrt numeric version errors (#2506)</li>
 </ul>
-
 <h4 id="kyle-fazzari">Kyle Fazzari</h4>
-
 <ul>
 <li>catkin plugin: check stage-snaps for ROS dependencies (#2525)</li>
 </ul>
@@ -227,6 +194,8 @@ been missing:</p>
     </div>
 
     <nav class="pagination" role="navigation">
+      
+          <a class="newer-posts" href="../../posts/setup-lxd-with-ubuntu-20.04-with-zfs-on-root/">&larr; <span class="hide">Next Post</span></a>
       
       <span class="page-number">&nbsp;</span>
       

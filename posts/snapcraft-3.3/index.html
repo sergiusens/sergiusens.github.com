@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snapcraft-3.3/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
     </a>    
     
 
@@ -112,76 +112,42 @@
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
           3 April 2019
-          
-
-<p>snapcraft 3.3 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the <a href="https://github.com/snapcore/snapcraft/releases/tag/3.0">snapcraft 3.0 release</a>.</p>
-
+          <p>snapcraft 3.3 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the <a href="https://github.com/snapcore/snapcraft/releases/tag/3.0">snapcraft 3.0 release</a>.</p>
 <p>If you are already on the <code>stable</code> channel for snapcraft then all you need to do is wait for the snap to be refreshed.</p>
-
 <p>The full <a href="https://github.com/snapcore/snapcraft/releases/tag/3.3">release notes</a> are replicated here below</p>
-
 <h2 id="core">Core</h2>
-
 <h3 id="base-core">base: core</h3>
-
 <p>In order to use the new features of snapcraft, introduced with 3.0, and still use 16.04 as a base, support for use of <code>base: core</code> has been added. This will trigger the same semantics as using the <code>base</code> keyword in snapcraft.</p>
-
-<h3 id="alternate-directory-for-snapcraft-yaml">Alternate directory for snapcraft.yaml</h3>
-
+<h3 id="alternate-directory-for-snapcraftyaml">Alternate directory for snapcraft.yaml</h3>
 <p><code>build-aux/snap</code> is now supported as an alternative directory for snapcraft.yaml and its assets (i.e.; hooks, gui, &hellip;). To avoid confusions, snapcraft now display what directory it is picking for assets depending on where the snapcraft.yaml is found. It will only pick <code>build-aux/snap</code> for assets if the <code>snapcraft.yaml</code> is found in that path.</p>
-
 <h3 id="string-validations">string validations</h3>
-
 <p>Snapcraft now produces a better error for when the type detected for the version <em>string</em> is not a <em>string</em>.</p>
-
 <h2 id="plugins">Plugins</h2>
-
 <h3 id="python">python</h3>
-
 <p>A minor fix which should bring <em>rebuilding</em> capabilities to projects using the <strong>python</strong> plugin.
 Long gone should be the days of seeing messages of the following construct:</p>
-
 <pre><code>You must give at least one requirement to install (maybe you meant &quot;pip install …&quot;)
-</code></pre>
-
-<h3 id="python-and-go">python and go</h3>
-
+</code></pre><h3 id="python-and-go">python and go</h3>
 <p>Expanded schema errors for users of the <strong>go</strong> and <strong>python</strong>, allowing for early discovery of non-valid uses of these plugins. Most importantly, this eliminates the cryptic error during build time when not using a combination of the <code>source</code> and <code>&lt;plugin-name&gt;-packages</code> keywords.</p>
-
 <h3 id="nodejs">nodejs</h3>
-
 <p>Entries of type <em>string</em> are now supported in <code>package.json</code> for the <code>bin</code> keyword (previously, the plugin could only parse dictionary entries), this means that constructs from <code>package.json</code> of the form:</p>
-
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;unnamed&quot;,
-  &quot;version&quot;: &quot;1.0&quot;,
-  &quot;description&quot;: &quot;Using string bin entries.&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;bin&quot;: &quot;bin/index.js&quot;,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;unnamed&#34;</span>,
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>,
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Using string bin entries.&#34;</span>,
+  <span style="color:#f92672">&#34;main&#34;</span>: <span style="color:#e6db74">&#34;index.js&#34;</span>,
+  <span style="color:#f92672">&#34;bin&#34;</span>: <span style="color:#e6db74">&#34;bin/index.js&#34;</span>,
 }
-</code></pre>
-
-<p>should be parse and interpreted correctly by snapcraft.</p>
-
+</code></pre></div><p>should be parse and interpreted correctly by snapcraft.</p>
 <h2 id="store">Store</h2>
-
 <h3 id="register-against-a-specific-store">Register against a specific store</h3>
-
 <p>Brand stores are a commercial feature of the Snap Store.</p>
-
 <p>The following syntax is now allowed as part of the <code>register</code> command:</p>
-
 <pre><code>snapcraft register [--store &lt;store&gt;] &lt;snap-name&gt;
-</code></pre>
-
-<p>Which will allow users to register snaps for specific brand stores.</p>
-
-<hr />
-
+</code></pre><p>Which will allow users to register snaps for specific brand stores.</p>
+<hr>
 <p>The issues and features worked on for 3.3 can be seen on the <a href="https://bugs.launchpad.net/snapcraft/+milestone/3.3">3.3</a> launchpad milestone which are reflected in the following change list:</p>
-
 <h4 id="sergio-schvezov">Sergio Schvezov</h4>
-
 <ul>
 <li>many: support for &ldquo;base: core&rdquo; in snapcraft.yaml (#2499) (LP: #1819290)</li>
 <li>python plugin: graceful ret when no packages set (#2498) (LP: #1794216)</li>
@@ -195,9 +161,7 @@ Long gone should be the days of seeing messages of the following construct:</p>
 <li>build providers: improve handling in snap logic (#2507) (LP: #1820864)</li>
 <li>tests: filter per arch and fix snap build deps</li>
 </ul>
-
 <h4 id="claudio-matsuoka">Claudio Matsuoka</h4>
-
 <ul>
 <li>sources: handle network request errors (#2494)</li>
 <li>store: handle invalid snap file errors (#2492)</li>
@@ -205,9 +169,7 @@ Long gone should be the days of seeing messages of the following construct:</p>
 <li>plugins: improve python and go schema validation (#2473) (LP: #1806055)</li>
 <li>cli: disable raven if not running from package (#2503)</li>
 </ul>
-
 <h4 id="facundo-batista">Facundo Batista</h4>
-
 <ul>
 <li>schema: better &lsquo;version&rsquo; error messages: wrong type and incorrect length (#2497)
 (LP: #1815812)</li>

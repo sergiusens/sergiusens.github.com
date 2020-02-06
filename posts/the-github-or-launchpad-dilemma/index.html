@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -110,18 +110,13 @@
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
           25 June 2015
-          
-
-<p>We wanted to start a migration path from bazaar to git given how ubiquitous it
+          <p>We wanted to start a migration path from bazaar to git given how ubiquitous it
 is and due to the fact that most in our team prefer it. A few months ago the
 decision was easy, since launchpad did not support git, we would just switch to
 github given it&rsquo;s popularity. <em>That&rsquo;s not true anymore&hellip;</em></p>
-
 <p>Today launchpad supports git and our comparison becomes finer grained and we
 have to break it down a bit more.</p>
-
 <p>So here are things I like github:</p>
-
 <ul>
 <li>Code is presented first.</li>
 <li>Documentation is easy to write and very nice to <strong>read</strong>.</li>
@@ -134,9 +129,7 @@ web.</li>
 <li>The UI layout in general.</li>
 <li>The API.</li>
 </ul>
-
 <p>The things I like about launchpad:</p>
-
 <ul>
 <li>Direct link between the source and ubuntu.</li>
 <li>A very nice bug tracking system.</li>
@@ -145,23 +138,16 @@ working on Ubuntu uses launchpad already.</li>
 <li>Very product oriented.</li>
 <li>A nice language translation system.</li>
 </ul>
-
 <p>Most of the things a like about one are probably things that I don&rsquo;t like or
 are missing in the other.</p>
-
 <h1 id="snappy">snappy</h1>
-
 <p>Given we work on <code>lp:snappy</code> most of the time now, I want to have a look at the
 <em>would be</em> workflow when on launchad and on github.</p>
-
 <h1 id="the-launchpad-workflow">The launchpad workflow</h1>
-
 <p>First of all, if the codebase were moved to launchpad&rsquo;s git support we&rsquo;d be
 missing proper support to query merge proposal status and linking bug reports
 to commits.</p>
-
 <p>The flow with git would be as follows:</p>
-
 <ol>
 <li><code>cd $GOPATH/src/launchpad.net/snappy</code>.</li>
 <li><code>git branch -c &lt;feature&gt;</code></li>
@@ -173,10 +159,8 @@ to commits.</p>
 <li>Manually invoke test run.</li>
 <li><code>git push git+ssh://USER@git.launchpad.net/snappy</code></li>
 </ol>
-
 <p>It is an improvement over bzr (especially since branches are colocated and go
 likes that), but we miss:</p>
-
 <ul>
 <li>unit test runs.</li>
 <li>unit test coverage tracking.</li>
@@ -185,33 +169,28 @@ implementation.</li>
 <li>translation support, only supported for bazaar.</li>
 <li>package recipe to push latest trunk to a PPA, also requires launchpad support.</li>
 </ul>
-
 <p>That said, things are coming along and most of this would be solved by either launchpad API enhancements to understand git or webhooks.</p>
-
 <h1 id="the-github-workflow">The github workflow</h1>
-
 <p>Given github&rsquo;s popularity, mostly everything is already done for you, and since they have webhooks a chain of events that follow an action in github gives us a very neat experience.</p>
-
 <p>This is what would happen:</p>
-
 <ol>
 <li><code>cd $GOPATH/src/launchpad.net/snappy</code>.</li>
 <li><code>git branch -c &lt;feature&gt;</code></li>
 <li>edit/create/fix</li>
 <li><code>git commit -s -m '...'</code>, if the issue is part of the
 comment it gets linked through github.</li>
-<li>git push git@github.com:<snappy-org>/snappy.git</li>
+<li>git push <a href="mailto:git@github.com">git@github.com</a>:<!-- raw HTML omitted -->/snappy.git</li>
 <li>Create pull request.</li>
-<li>travis is triggered by the event and runs everything we<br />
+<li>travis is triggered by the event and runs everything we<br>
 tell it to:
-
 <ol>
 <li>Run a test build.</li>
 <li>Runs unit tests.</li>
 <li>Runs sanity checks (go vet, lint, &hellip;)</li>
 <li>Push the unit test coverage to corevalls.io</li>
 <li>Build deb.</li>
-</ol></li>
+</ol>
+</li>
 <li>Reviewer uses the data updated in real time aside from his human provided
 factor to determine if the PR should be merged. This data includes, travis
 passing unit tests and it&rsquo;s coverage increase or decrease among others with
@@ -219,21 +198,16 @@ nice badges.</li>
 <li>Click on Merge PR.</li>
 <li>The master branch has it&rsquo;s status/sanity presented with badges as well.</li>
 </ol>
-
 <h1 id="closing-thoughts">Closing thoughts</h1>
-
 <p>It is no secret I&rsquo;ve been wanting to move to github for a while, it solves
 many problems we have that we don&rsquo;t want to go around and solve ourselves. It
 is not the panacea but it does seem fit for most of the things we need.</p>
-
 <p>Given that now both launchpad and github support git we can ping pong between
 them as seen fit (not out of spite though).</p>
-
 <p>The biggest hurdle we&rsquo;d be facing on every change is our <code>go</code> import paths which
 are absolute to make <code>go get</code> straightforward (even if we don&rsquo;t take too many
 other advantages for it) for which one solution I&rsquo;ve been wanting to give a try
 is <a href="http://getgb.io">http://getgb.io</a>.</p>
-
 <p>In some sense I sometimes get the feeling that github is like vim and launchpad
 is like emacs, and I am a vim person.</p>
 

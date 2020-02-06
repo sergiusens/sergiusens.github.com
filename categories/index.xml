@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
@@ -6,7 +6,7 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Apr 2019 14:05:04 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 13:29:02 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>ubuntu</title>
       <link>http://blog.sergiusens.org/categories/ubuntu/</link>
-      <pubDate>Wed, 03 Apr 2019 14:05:04 -0300</pubDate>
+      <pubDate>Wed, 29 Jan 2020 13:29:02 -0300</pubDate>
       
       <guid>http://blog.sergiusens.org/categories/ubuntu/</guid>
       <description></description>

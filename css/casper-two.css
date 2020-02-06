@@ -1,3 +1,7 @@
+div.highlight {
+    padding-bottom: 1.5em;
+}
+
 .pagination {
     position: relative;
     width: 100%;

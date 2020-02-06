@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/preliminary-support-for-dtb-override-from-oem-snaps/">
-      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
     </a>    
     
 
@@ -113,57 +113,31 @@
           <p>Today the always <em>in motion</em> ppa <code>ppa:snappy-dev/tools</code> has landed support for
 overriding the dtb provided by the platform in the device part with one
 provided by the oem snap.</p>
-
 <p>The <code>package.yaml</code> for the oem snap has been extended a bit to support this,
 an example follows for extending the <em>am335x-boneblack</em> platform.</p>
-
-<pre><code class=”yaml”>
-name: mydevice.sergiusens
-vendor: sergiusens
-icon: meta/icon.png
-version: 1.0
-type: oem
-
-branding:
-    name: My device
-        subname: Sergiusens Inc.
-
-        store:
-            oem-key: 123456
-
-            hardware:
-                dtb: mydtb.dtb
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>The path <code>hardware/dtb</code> key in the <code>yaml</code> holds a value which is the path to
 the dtb withing the package, so in this case, I put mydtb.dtb in the root of
 the snap.</p>
-
 <p>After that it’s just a <code>snappy build</code> away:</p>
-
 <pre><code>snappy build .
 </code></pre>
-
 <p>In order to get this properly provisioned, first we need the latest
 <code>ubuntu-device-flash</code> from the <code>ppa:snappy-dev/tools</code>, so let’s get it</p>
-
 <pre><code>sudo add-apt-repository ppa:snappy-dev/tools
 sudo apt update
 sudo apt install ubuntu-device-flash
 </code></pre>
-
 <p>And now we are ready to <em>flash</em></p>
-
 <pre><code>sudo ubuntu-device-flash core \
     --platform am335x-boneblack \
     --size 4 \
     --install mydevice_sergiusens_1.0_all.snap
     --output bbb_custom.img
 </code></pre>
-
 <p>If everything went well, the boot partiton will hold your custom dtb instead of
 the default one, specifying <code>--platform</code> is required for this.</p>
-
 <p>Please note that some of these things described here are subject to change.</p>
 
       </section>

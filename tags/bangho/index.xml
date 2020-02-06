@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bangho on </title>
@@ -27,7 +27,8 @@ In that aforementioned post I wrote about running the Ubuntu Report Tool on this
       <pubDate>Tue, 17 Jul 2018 09:50:20 -0300</pubDate>
       
       <guid>http://blog.sergiusens.org/posts/new-laptop/</guid>
-      <description>Triggers Recently, as of last week, I decided to purchase a new laptop to replace my Microsoft Surface Pro 4 with which I was having a bittersweet relationship. The Surface Pro 4 is really nice hardware, I originally got it to get a head start and collaborate on the convergence story with Unity 8 on the desktop, but as is of folk knowledge now, some strategic choices were made.</description>
+      <description>Triggers Recently, as of last week, I decided to purchase a new laptop to replace my Microsoft Surface Pro 4 with which I was having a bittersweet relationship. The Surface Pro 4 is really nice hardware, I originally got it to get a head start and collaborate on the convergence story with Unity 8 on the desktop, but as is of folk knowledge now, some strategic choices were made.
+I still kept the device and actually used it, as I mentioned, it is nice hardware but the support on Linux is just not great, alleviated greatly thanks to jakeday&amp;lsquo;s kernel tree, yet still not fully supported.</description>
     </item>
     
   </channel>

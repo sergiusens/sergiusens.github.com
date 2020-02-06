@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -112,77 +112,46 @@
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
           5 February 2019
-          
-
-<p>snapcraft 3.1 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the <a href="https://github.com/snapcore/snapcraft/releases/tag/3.1">snapcraft 3.1 release</a>.</p>
-
+          <p>snapcraft 3.1 is now available on the stable channel of the Snap Store. This is a new minor release building on top of the foundations laid out from the <a href="https://github.com/snapcore/snapcraft/releases/tag/3.1">snapcraft 3.1 release</a>.</p>
 <p>If you are already on the <code>stable</code> channel for snapcraft then all you need to do is wait for the snap to be refreshed.</p>
-
 <p>The full <a href="https://github.com/snapcore/snapcraft/releases/tag/3.1">release notes</a> are replicated here below</p>
-
 <h2 id="build-environments">Build Environments</h2>
-
 <p>It is now possible, <em>when using the <code>base</code> keyword</em>, to once again clean parts. To do so run:</p>
-
 <pre><code>snapcraft clean &lt;part-name&gt;
-</code></pre>
-
-<p>Cleaning individual steps from a specific part, previously provided by the <code>--step</code> option to <code>clean</code>, is being redesigned to be more intuitive and straight forward in its use.</p>
-
+</code></pre><p>Cleaning individual steps from a specific part, previously provided by the <code>--step</code> option to <code>clean</code>, is being redesigned to be more intuitive and straight forward in its use.</p>
 <h2 id="core">Core</h2>
-
 <h3 id="before-and-after">before and after</h3>
-
 <p>The <code>before</code> and <code>after</code> keywords, used for ordering service launching within a snap, are now properly supported in <code>snapcraft</code>.</p>
-
 <h3 id="appstream-extractor">Appstream extractor</h3>
-
 <p>The appstream metadata extractor can now properly handle tags inside the relevant nodes and properly filter <code>xml:lang</code>, such that:</p>
-
-<pre><code class="language-xml">  &lt;description&gt;
-    &lt;p&gt;List:&lt;/p&gt;
-    &lt;p xml:lang=&quot;es&quot;&gt;Lista:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;First item.&lt;/li&gt;
-      &lt;li xml:lang=&quot;es&quot;&gt;Primer item.&lt;/li&gt;
-      &lt;li&gt;Second item.&lt;/li&gt;
-      &lt;li xml:lang=&quot;es&quot;&gt;Segundo item.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/description&gt;
-</code></pre>
-
-<p>Is presented as the following description in <code>snap.yaml</code>:</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#f92672">&lt;description</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;p</span><span style="color:#f92672">&gt;</span>List:<span style="color:#f92672">&lt;/p&gt;</span>
+    <span style="color:#f92672">&lt;p</span> <span style="color:#a6e22e">xml:lang=</span><span style="color:#e6db74">&#34;es&#34;</span><span style="color:#f92672">&gt;</span>Lista:<span style="color:#f92672">&lt;/p&gt;</span>
+    <span style="color:#f92672">&lt;ul</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;li</span><span style="color:#f92672">&gt;</span>First item.<span style="color:#f92672">&lt;/li&gt;</span>
+      <span style="color:#f92672">&lt;li</span> <span style="color:#a6e22e">xml:lang=</span><span style="color:#e6db74">&#34;es&#34;</span><span style="color:#f92672">&gt;</span>Primer item.<span style="color:#f92672">&lt;/li&gt;</span>
+      <span style="color:#f92672">&lt;li</span><span style="color:#f92672">&gt;</span>Second item.<span style="color:#f92672">&lt;/li&gt;</span>
+      <span style="color:#f92672">&lt;li</span> <span style="color:#a6e22e">xml:lang=</span><span style="color:#e6db74">&#34;es&#34;</span><span style="color:#f92672">&gt;</span>Segundo item.<span style="color:#f92672">&lt;/li&gt;</span>
+    <span style="color:#f92672">&lt;/ul&gt;</span>
+  <span style="color:#f92672">&lt;/description&gt;</span>
+</code></pre></div><p>Is presented as the following description in <code>snap.yaml</code>:</p>
 <pre><code>List:
 
 - First item.
 - Second item.
-</code></pre>
-
-<p>Additionally, desktop files are now properly found from the appstream <code>launchable</code> entries or by falling back to legacy mode and inferring the desktop file from the appstream <code>id</code>.</p>
-
+</code></pre><p>Additionally, desktop files are now properly found from the appstream <code>launchable</code> entries or by falling back to legacy mode and inferring the desktop file from the appstream <code>id</code>.</p>
 <h2 id="plugins">Plugins</h2>
-
 <h3 id="cmake">cmake</h3>
-
 <p>The plugin can now leverage <code>build-snaps</code> into the build environment, when any given <code>build-snaps</code> entry exists for a part that uses the <code>cmake</code> plugin, the plugin will make use of <code>CMAKE_FIND_ROOT_PATH</code> so that libraries and headers from that snap are preferred.</p>
-
 <p>Additionally, <code>cmake</code> primitives are now used to drive the build instead of just calling <code>make</code>.</p>
-
 <p>These features have already been used to create an initial set of KDE applications leveraging <code>core18</code> as a base as described on the <a href="https://snapcraft.io/blog/kde-apps-at-the-snap-of-your-fingers">KDE apps at the snap of your fingers</a> article.</p>
-
 <h3 id="rust">rust</h3>
-
 <p>The <code>rust</code> plugin has been refactored in a backwards compatible way to work better with the non-legacy <code>rustup</code> tool.</p>
-
 <h2 id="platforms">Platforms</h2>
-
 <h3 id="os-x">OS X</h3>
-
 <p>When using <code>snapcraft</code> with homebrew for the first time, if <code>multipass</code> is not found, the user will be prompted to install it before proceeding.</p>
-
+<h2 id="heading"></h2>
 <p>The issues and features worked on for 3.1 can be seen on the <a href="https://launchpad.net/snapcraft/+milestone/3.1">3.1 launchpad milestone</a> which are reflected in the following change list:</p>
-
 <ul>
 <li>cmake plugin: use native primitives (#2397)</li>
 <li>cmake plugin: use build snaps to search paths (#2399)</li>

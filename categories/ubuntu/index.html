@@ -34,7 +34,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -89,11 +89,70 @@
       
 
 
-<article class="post-card post"> 
+<article class="post-card post">
+    
+    <a class="post-card-image-link" href="../../posts/setup-lxd-with-ubuntu-20.04-with-zfs-on-root/">
+      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="../../posts/setup-lxd-with-ubuntu-20.04-with-zfs-on-root/">
+          <header class="post-card-header">
+              
+              <h2 class="post-card-title">Setup LXD with Ubuntu&#39;s ZFS on root</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>I want to have a head start to make sure Ubuntu 20.04 works flawlessly by the time it releases. I am however making some bold moves, like setting up ZFS on Root during install which is currently marked as EXPERIMENTAL. TODO zfs on root screenshot   After the installation is done, we can check that the installer creates two pools: $ zpool list NAME SIZE ALLOC FREE CKPOINT EXPANDSZ FRAG CAP DEDUP HEALTH ALTROOT bpool 1,88G 178M 1,70G - - 0% 9% 1. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
+          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post">
+    
+    <a class="post-card-image-link" href="../../posts/snapcraft-3.4/">
+      <div class="post-card-image" style="background-image: url(/defimg/4.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="../../posts/snapcraft-3.4/">
+          <header class="post-card-header">
+              
+              <h2 class="post-card-title">Snapcraft 3.4</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>I am really excited about this release as it brings two features I have personally been missing:
+ the option to --use-lxd the possibility to snapcraft try  If you are already on the stable channel for snapcraft then all you need to do is wait for the snap to be refreshed.
+The full release notes are replicated here below
+ snapcraft snap The snapcraft snap has now moved to using base: core, this unlocks snapcraft into using the snapcraft 3. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
+          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post">
     
     <a class="post-card-image-link" href="../../posts/snapcraft-3.3/">
-      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
-    </a>    
+      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+    </a>
     
 
     <div class="post-card-content">
@@ -124,11 +183,44 @@ Core base: core In order to use the new features of snapcraft, introduced with 3
 </article>
 
 
-<article class="post-card post"> 
+<article class="post-card post">
+    
+    <a class="post-card-image-link" href="../../posts/broader-use-of-bases-for-snaps/">
+      <div class="post-card-image" style="background-image: url(/defimg/4.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="../../posts/broader-use-of-bases-for-snaps/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #snappy 
+              #snapcraft 
+              #development  </span>
+              
+              <h2 class="post-card-title">Broader use of bases for snaps</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>We have regular Engineering Sprints at Canonical. These are a great opportunity for engineering teams to come together and discuss progress and roadmaps, as well as code and work together. Many of us have just returned from one such event in Malta, getting home just before the widely report storm hit the island (see Destruction across Malta as gale-force winds batter islands).
+And one of the things we discussed over the course of that week was the implications of using bases when snaps use type other than app (a base is a special kind of snap that provides a minimal set of libraries common to most applications). ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
+          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post">
     
     <a class="post-card-image-link" href="../../posts/snapcraft-3.1/">
-      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
-    </a>    
+      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
+    </a>
     
 
     <div class="post-card-content">
@@ -159,11 +251,11 @@ Build Environments It is now possible, when using the base keyword, to once agai
 </article>
 
 
-<article class="post-card post"> 
+<article class="post-card post">
     
     <a class="post-card-image-link" href="../../posts/snapcraft-3.0/">
-      <div class="post-card-image" style="background-image: url(/defimg/4.jpg)"></div>
-    </a>    
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
+    </a>
     
 
     <div class="post-card-content">
@@ -194,108 +286,11 @@ Build Environments As the cornerstone for behavioral change, we are introducing 
 </article>
 
 
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="../../posts/reporting-metrics-back-to-ubuntu/">
-      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
-    </a>    
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="../../posts/reporting-metrics-back-to-ubuntu/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #hardware 
-              #bangho  </span>
-              
-              <h2 class="post-card-title">Reporting Metrics Back to Ubuntu</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>A short lived ride After some time on Kubuntu on this new laptop, I just re-discovered that I did not want to live in the Plasma world anymore. While I do value all the work the team behind it does, the user interface is just not for me as it feels rather busy to my liking.
-In that aforementioned post I wrote about running the Ubuntu Report Tool on this system, it is not part of the Kubuntu install or first boot experience but you can install it by running apt install ubuntu-report followed by running ubuntu-report to actually create the report and if you want, send it too. ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
-          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="../../posts/snapcraft-build-environments/">
-      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
-    </a>    
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="../../posts/snapcraft-build-environments/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #snappy 
-              #snapcraft 
-              #development  </span>
-              
-              <h2 class="post-card-title">Snapcraft Build Environments</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Prologue After a week away from my computer I want to organize my thoughts on the progress made towards build VMs by providing this write up since that forum post can be a bit overwhelming if you are casually wanting to keep up to date.
-The reasons for this feature work to exist, for those not up to speed, is that we want to have a very consistent build environment for which anyone building a project can have an expectable outcome of a working snap (or non working one if it really doesn&rsquo;t). ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
-          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="../../posts/new-laptop/">
-      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
-    </a>    
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="../../posts/new-laptop/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #hardware 
-              #kubuntu 
-              #bangho  </span>
-              
-              <h2 class="post-card-title">New Laptop</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Triggers Recently, as of last week, I decided to purchase a new laptop to replace my Microsoft Surface Pro 4 with which I was having a bittersweet relationship. The Surface Pro 4 is really nice hardware, I originally got it to get a head start and collaborate on the convergence story with Unity 8 on the desktop, but as is of folk knowledge now, some strategic choices were made. ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
-          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
-      </footer>
-    </div>
-</article>
-
-
     </div>
 
     <nav class="pagination" role="navigation">
       
-      <span class="page-number"><span class="hide">Page 1 of 4</span>&nbsp;</span>
+      <span class="page-number"><span class="hide">Page 1 of 5</span>&nbsp;</span>
       
           <a class="older-posts" href="../../categories/ubuntu/page/2/"><span class="hide">Previous Posts</span> &rarr;</a>
       

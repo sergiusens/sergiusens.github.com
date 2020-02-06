@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/ubuntu-core/">
-      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
     </a>    
     
 
@@ -113,7 +113,6 @@
           <p>Ubuntu Core is what we&rsquo;ve been working on this past time, it has been an
 interesting ride. It was developed completely in the open, there was just no
 real promotion about it until we were ready.</p>
-
 <p>If you had noticed, we use <code>ubuntu-device-flash</code> to create this core image, and
 for development we used it across the board with the <em>core</em> subcommand. We did
 learn a couple of things from the phone and decided to just provide a static
@@ -121,7 +120,6 @@ image that we could make sure would work for everyone giving it a try (aka more
 QA). In essence you can still upgrade and if something is not to your like,
 just rollback, it&rsquo;s that neat. So in summary, <code>ubuntu-device-flash</code> today is
 just a step in the release process to get to the final image.</p>
-
 <p>Yesterday I played around with creating a <em>snap</em> for
 <a href="https://camlistore.org">camlistore</a> and it was a <em>breeze</em>, To get it just
 <code>snap install camlistore</code>, all the command line tools are in there provided by
@@ -129,10 +127,8 @@ the <code>binary</code> stanza from
 <a href="http://developer.ubuntu.com/snappy/packaging-format-for-apps/">package.yaml</a>.
 The <code>camlistored</code> daemon is created in the <code>services</code> list where I just needed
 to provide a <code>start</code>, which in the background creates a <code>systemd</code> unit.</p>
-
 <p>The beauty here is that I don&rsquo;t really need to know much of the underlying
 technology, and that is awesome for just quickly creating a <em>snap</em>.</p>
-
 <p>What is missing here though, is an easy way to configure the package that was
 just intalled, for now, it should be as easy to look at the
 <a href="http://developer.ubuntu.com/snappy/filesystem-layout/">file system layout</a> and
@@ -140,10 +136,8 @@ going to <code>/var/lib/apps/&lt;app-name&gt;/&lt;version&gt;/</code> which woul
 <code>/var/lib/apps/camlistore/0.8</code> and within we&rsquo;d have
 <code>.config/camlistore/server-config.json</code>, in most cases you&rsquo;d want to setup your
 authentication in there.</p>
-
 <p>And here&rsquo;s the mandatory screenshot of this running on my kvm instance:</p>
-
-<p><img src="../../img/camlistore00.png"></p>
+<!-- raw HTML omitted -->
 
       </section>
 

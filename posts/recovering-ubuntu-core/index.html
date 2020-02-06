@@ -40,7 +40,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -98,7 +98,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/recovering-ubuntu-core/">
-      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
     </a>    
     
 
@@ -113,135 +113,100 @@
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
           1 August 2015
-          
-
-<h1 id="introduction">Introduction</h1>
-
+          <h1 id="introduction">Introduction</h1>
 <blockquote>
 <p>A note of caution, most of this is an experiment and lacks <em>finess</em>.</p>
 </blockquote>
-
 <p>Ubuntu Core was released over half a year ago using this nice thing called
 <strong>snappy</strong>, the design allows for transactional updates among others, these
 updates keep on <em>rolling</em> though their streams and can be kicked out (rolled
 back) if something was fishy, guaranteeing a certain level of confidence that
 the system should not break.</p>
-
 <p>Now introduce the concept of storage, that thing that will always limit you
 no matter the amount; with this consider that a popular method to avoid this
 is to garbage collect, old things you forgot about will just go away.</p>
-
 <p>To add a twist to the story, imagine you want to wipe your system. Given the
 fact that we have a clear separation of what is writable and what is intrinsic
 to what makes up the core, this is rather trivial. This would indeed reset any
 customization done to the system, but&hellip;</p>
-
 <p>The OS parts that compose Ubuntu Core are also garbage collected, better said
 it is like a round robin of size 2, these parts of the system are implicitly
 garbage collected so if I want to do a <strong>real</strong> factory reset, there is no way
 to do that today because you don&rsquo;t have the <strong>core</strong> part of the system that
 the device came with.</p>
-
 <p>There&rsquo;s a couple more questions:</p>
-
 <ul>
 <li>do we want to update the boot loader of the running system?</li>
 <li>can we recovery from a completely broken system in an autonomous way?</li>
 <li>how do we make this generic?</li>
 </ul>
-
 <p>There are more&hellip;</p>
-
 <h1 id="booting-ubuntu-core">Booting Ubuntu Core</h1>
-
 <p>We use two boot loaders to power this snappy system, one is <code>grub</code>, the other
 <code>u-boot</code>. We default to the former for x86 based systems while the latter we
 use for arm.</p>
-
 <p>Both are similar, using an A/B model to boot with some try variables that the
 boot loader in question reads to determine which system to boot and where to
 rollback to in case of an issue.</p>
-
 <p>The OS part of the system lives in either a partition labeled <code>system-a</code> or
 <code>system-b</code>, this is similar to the Ubuntu <code>rootfs</code> with the booting parts
 stripped out to a <code>platform</code> specific part that lives in the <code>system-boot</code>
 partition with an A/B scheme. Take note that the <code>platform</code> name and full
 functionality is under (re) design, and also currently known as <code>kernel</code> or
 <code>device</code>.</p>
-
 <p>All snappy packages are intended to be real snaps, today these are snappy
 package types:</p>
-
 <ul>
 <li><code>app</code></li>
 <li><code>framework</code></li>
 <li><code>oem</code> (to be repurposed as <code>gadget</code>)</li>
 </ul>
-
 <p>As mentioned, two more package types are arriving, <code>platform</code> and <code>os</code> which
 today are driven by <a href="https://wiki.ubuntu.com/ImageBasedUpgrades">system image</a>
 pending a migration to actual snappy packages.</p>
-
 <h1 id="bootloader">Bootloader</h1>
-
 <p>There is only one boot loader core that takes care of booting into the right
 system, updating this boot loader logic adds risk as breaking it would render
 a system useless. As long as it&rsquo;s not updated everything should be fine.</p>
-
 <h2 id="regular-booting">Regular booting</h2>
-
 <p>When business is as usual, the boot loader will load its environment, read the
 <code>snappy_ab</code> variable, which would contain a value of either <code>a</code> or <code>b</code> together
 with the <code>snappy_mode</code> variable which would contain the value of <code>regular</code>.</p>
-
 <p>If <code>snappy_ab</code> were to have the value <code>a</code>, the kernel <code>cmdline</code> would contain an
 entry with <code>root=LABEL=system-a</code> (it&rsquo;s <code>root=LABEL=system-$snappy_ab</code>) whilst
 the kernel part (for <code>grub</code>) would start with something like
 <code>linux /a/vmlinuz</code>&hellip;, the <code>initrd</code> line for <code>grub</code> would be rather similar
 <code>initrd /a/initrd.img</code></p>
-
 <h2 id="booting-into-an-upgrade">Booting into an upgrade</h2>
-
 <p>When the system updates the <code>os</code> and <code>platform</code> parts of the system, if the
 system was currently running from <code>system-a</code> it would drop the update onto
 <code>system-b</code> and the <code>b</code> part of the <code>system-boot</code> partition for the kernel,
 initrd and related files. The <code>snappy_mode</code> variable would be set to <code>try</code>
 and after the system finished booting it would set the mode to <code>regular</code> and
 life would move on.</p>
-
 <h1 id="the-experiment">The experiment</h1>
-
 <p>In this experiment we want to have a <code>recovery</code> partition with its own boot
 loader and the original image that was put on the system by the manufacturer.
 This would allow:</p>
-
 <ul>
 <li>for potential updates to the running systems.</li>
 <li>a mechanism for a real factory wipe.</li>
 <li>a tentative installer.</li>
 </ul>
-
 <p>For this, two new components are needed:</p>
-
 <ul>
 <li>a better <code>ubuntu-device-flash</code> (call it <code>uflash</code>).</li>
 <li>a <code>recovery</code> component.</li>
 </ul>
-
 <p>Additionally, and this is not final or has been discussed, we created some stub
 <code>platform</code> and <code>os</code> snappy packages. The <code>os</code> snap is an ubuntu rootfs put into
 a <code>squashfs</code> while the <code>platform</code> snap provides the kernel, a modified <code>initrd</code>
 that knows how to go into recovery or a running system and some boot loader
 assets (initial <code>grub.cfg</code>).</p>
-
 <p>The <code>recovery</code> component lives in the ubuntu rootfs.</p>
-
 <p>For simplicity the focus was on <code>grub</code>, <code>gpt</code> and <code>pc-bios</code>.</p>
-
 <h2 id="creating-an-image">Creating an image.</h2>
-
 <p>To create an image in this experiment one would do:</p>
-
 <pre><code>sudo ./uflash \
 --platform platform_rolling1_all.snap \
 --os ubuntu_rolling1_amd64.snap \
@@ -249,41 +214,30 @@ assets (initial <code>grub.cfg</code>).</p>
 --snaps  webdm.canonical_0.9_multi.snap \
 core.img
 </code></pre>
-
 <p>This would create an image called <code>core.img</code>, with 2 partitions:</p>
-
 <ul>
 <li><code>grub</code>, for grub&rsquo;s <code>boot.img</code></li>
 <li><code>recovery</code>, with all those snappy packages passed in the command line and
 a grub&rsquo;s <code>core.img</code>.</li>
 </ul>
-
 <p>I want to take into account again that this <code>uflash</code> thing is just for play
 and its cli will likely be different if it comes to fruition.</p>
-
 <h2 id="recovering">Recovering</h2>
-
 <p>The <code>grub.cfg</code> put into <code>recovery</code> would boot into <code>recovery</code> using the
 <code>platform</code> and <code>os</code> snaps to drive it. The <code>recovery</code> logic would create two
 new partitions:</p>
-
 <ul>
 <li><code>boot</code></li>
 <li><code>writable</code></li>
 </ul>
-
 <p>It will then set up <code>boot</code> to have an A/B schema and insert the <code>platform</code> and
 <code>os</code> snappy packages used in the <code>recovery</code> partition.</p>
-
 <p>All the snappy packages passed in with <code>--snap</code> in <code>uflash</code> will be installed
 onto the system (depending on restraints defined in the <code>gadget</code> snap which
 are ignored here as it&rsquo;s not part of the current experiment).</p>
-
 <p>It will also install a <code>core.img</code> which the boot loader in <code>recovery</code> would
 jump to providing boot loader independence for the running system.</p>
-
 <h2 id="try-it">Try it</h2>
-
 <ul>
 <li>Download <code>core.img.xz</code> from
 <a href="http://people.canonical.com/~sergiusens/snappy/recovery">recovery</a></li>
@@ -291,24 +245,18 @@ jump to providing boot loader independence for the running system.</p>
 <li>Extract into <code>core.img</code></li>
 <li>Run it <code>kvm -m 1500 core.img</code></li>
 </ul>
-
 <h2 id="take-away">Take away</h2>
-
 <p>All this is experimental, but everything used here can be found in
 <a href="http://people.canonical.com/~sergiusens/snappy/recovery">recovery</a> and the
 code is composed of multiple branches under my name which can be found in
 <a href="https://code.launchpad.net/~sergiusens/snappy">snappy</a>.</p>
-
 <p>There is no indication of this merging into the main branch or product and
 the code is not production quality (yet).</p>
-
 <p>A side benefit is that the <code>recovery</code> logic could potentially serve as an
 installer.</p>
-
 <p>There are some things you just can&rsquo;t do with this image, which if paying
 attention would be easy to spot but just in case, system image updates won&rsquo;t
 work.</p>
-
 <p>That&rsquo;s all</p>
 
       </section>

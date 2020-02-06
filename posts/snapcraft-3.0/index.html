@@ -40,7 +40,7 @@ Presenting snapcraft 3.0 The arrival of snapcraft 3." />
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -98,7 +98,7 @@ Presenting snapcraft 3.0 The arrival of snapcraft 3." />
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snapcraft-3.0/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
     </a>    
     
 
@@ -115,41 +115,30 @@ Presenting snapcraft 3.0 The arrival of snapcraft 3." />
       </a>
       <section class="post-card-excerpt" style="padding: 0 25px;">
           30 November 2018
-          
-
-<p>The release notes for <a href="https://github.com/snapcore/snapcraft/releases/tag/3.0">snapcraft 3.0</a> have been long overdue.
+          <p>The release notes for <a href="https://github.com/snapcore/snapcraft/releases/tag/3.0">snapcraft 3.0</a> have been long overdue.
 For convenience I will reproduce them here too.</p>
-
-<h1 id="presenting-snapcraft-3-0">Presenting snapcraft 3.0</h1>
-
+<h1 id="presenting-snapcraft-30">Presenting snapcraft 3.0</h1>
 <p>The arrival of snapcraft 3.0 brings fresh air into how snap development takes place!</p>
-
 <p>We took the learnings from the main pain points you had when creating snaps in the
 past several years, and we we introduced those lessons into a brand new release -
 snapcraft 3.0!</p>
-
 <h2 id="build-environments">Build Environments</h2>
-
 <p>As the cornerstone for behavioral change, we are introducing the concept of build
 environments. These are configurations created for every snapcraft project you
 work on, tuned for the desired targets, ensuring API and ABI compatibility are
 in place for every binary through these build environments.</p>
-
 <p>The way build environments  work is by leveraging a feature of the <em>snap</em> architecture
 alled <strong>bases</strong>.
 A base is the building block that applications can rely on as a stable run time. At build time,
 the snapcraft tool ensures you are creating your applications inside an
 environment specifically tailored for this base.</p>
-
 <p>To make the transition easy, the entire functionality for this new tool behavior is
 triggered by making use of the <code>base</code> keyword in <code>snapcraft.yaml</code>. For backward compatibility,
 all currently well known functionality is still available. You can omit the <code>base</code> keyword and
 continue working as you have previously done until you are ready to move to a newer or different
 stack provided by a different <em>base</em>.</p>
-
 <p>The environment is encapsulated from the user during normal operations, but there are ways
 to step into the environment with the following build command options:</p>
-
 <ul>
 <li><code>--shell</code>, runs upto the prior lifecycle step and drops into a shell instead in lieu of
 running the lifecycle step (e.g.: running <code>snapcraft prime --shell</code> will run upto the
@@ -159,23 +148,16 @@ running the lifecycle step (e.g.: running <code>snapcraft prime --shell</code> w
 <code>prime</code> step and then drop into a shell).</li>
 <li><code>--debug</code>, drops into a shell inside the build environment when errors occur.</li>
 </ul>
-
 <p>The below video shows an example of how the system behaves with the new
 unctionality in place:</p>
-
-<p><a href="https://asciinema.org/a/t547f0ItBy6pW3kCSLxdV0JVL"><img src="https://asciinema.org/a/t547f0ItBy6pW3kCSLxdV0JVL.svg" alt="asciicast" /></a></p>
-
+<p><a href="https://asciinema.org/a/t547f0ItBy6pW3kCSLxdV0JVL"><img src="https://asciinema.org/a/t547f0ItBy6pW3kCSLxdV0JVL.svg" alt="asciicast"></a></p>
 <h2 id="new-platforms">New platforms</h2>
-
 <p>With this release of snapcraft 3.0 we are happy to announce that OS X is supported
 through homebrew. Moreover, the experience is transparent thanks to the use of build
 environments and its underlying technology.</p>
-
 <h2 id="removed-features">Removed features</h2>
-
 <p>When using the <code>base</code> keyword in <code>snapcraft.yaml</code> the following, long ago deprecated,
 features are no longer available:</p>
-
 <ul>
 <li>wiki parts and the quirks in the code base to allow for certain corner cases introduced
 by this feature such as allowing / in parts.</li>
@@ -187,83 +169,59 @@ of doing <code>override-</code> for <code>pull</code>, <code>stage</code> and <c
 <li>When calling build commands through snapcraft, <code>--disable-parallel-build</code> is no
 longer available, it can be setup per part using the <code>build-attributes</code> property.</li>
 <li>Also, calling build commands through snapcraft, <code>--use-geoip</code> which affected
-<code>stage-packages</code> is no longer available.
-<br /></li>
+<code>stage-packages</code> is no longer available.</li>
 </ul>
-
 <p>The following plugins are no longer available when using the <code>base</code> keyword:</p>
-
 <ul>
 <li><code>tar-content</code>, superseded by the <code>dump</code> plugin.</li>
 <li><code>copy</code>, superseded by the <code>dump</code> plugin.</li>
 <li><code>jhbuild</code>, it has too many dependencies against <code>core</code>.</li>
 </ul>
-
 <h2 id="core-features">Core features</h2>
-
 <p>The snapcraft 3.0 release brings the enablement of these core keywords for <code>snapcraft.yaml</code>
 with the use of the <code>base</code> keyword.</p>
-
 <h3 id="license"><code>license</code></h3>
-
 <p>The license applicable to a snap is defined under the SPDX 2.0 format.
 Validity of the license syntax is done using <code>snap pack</code> schema validation
 to ensure consistency across this <em>snap</em> ecosystem.</p>
-
 <h3 id="wrapperless-snaps">Wrapperless snaps</h3>
-
 <p>If you were part of the history of snaps since its conception, the idea of these wrappers
 probably make sense as they were useful when they were introduced to setup the environment
 appropriately. The architecture for the runtime has evolved in such a way where these wrappers
 do not make sense anymore as the primitives in the runtime have evolved into allowing a better
 design.</p>
-
 <p>Although it is not the default today, the intention is to make this <code>adapter</code> value (<code>full</code>),
 the default behavior. Advantages of this design are that when entering a shell through
 <code>snap run --shell</code> the environment would be properly loaded through use of <code>command-chain</code>
 entries in <code>snap.yaml</code></p>
-
 <p>The recording below shows how the original <code>command</code> defined in <code>snapcraft.yaml</code> is now still
 the <code>command</code> that makes it to <code>snap.yaml</code> and the <code>command-chain</code> feature is used instead:</p>
-
-<p><a href="https://asciinema.org/a/tq8D2RhEXbsNYkVDVz5EzYDH0"><img src="https://asciinema.org/a/tq8D2RhEXbsNYkVDVz5EzYDH0.svg" alt="asciicast" /></a></p>
-
+<p><a href="https://asciinema.org/a/tq8D2RhEXbsNYkVDVz5EzYDH0"><img src="https://asciinema.org/a/tq8D2RhEXbsNYkVDVz5EzYDH0.svg" alt="asciicast"></a></p>
 <h3 id="extensions">Extensions</h3>
-
 <p>The architecture and framework has been cemented into the <code>snapcraft</code> tool to grow
 declarative functionality in the <code>snapcraft.yaml</code>. We have done this to avoid repetitive
 tasks or require deeper knowledge of a target software stack.</p>
-
 <p>Extensions have a unique property of being applied to the <code>snapcraft.yaml</code> itself, for them
 to be <em>expanded</em> and potentially used in lieu of the extension itself and make further project
 specific modifications.</p>
-
 <p>You will be able to interact with extensions using the following commands:</p>
-
 <ul>
 <li><code>list-extensions</code>, to view the available extensions.</li>
 <li><code>extension</code>, to show information about the extension.</li>
 <li><code>expand-extensions</code>, to display how the <code>snapcraft.yaml</code> will look like with the extensions
 applied.</li>
 </ul>
-
 <h3 id="lifecycle">Lifecycle</h3>
-
 <p>Prior to snapcraft 3.0, one had to go in and manually clean any part that was found to be dirty
 due to modifications in the code itself or the <em>part</em> definition in <code>snapcraft.yaml</code>. This
 was proven to be an unnecessary burden brought upon developers.</p>
-
 <p>Taking this into account, the default action the <code>snapcraft</code> tool takes now is to <em>rebuild</em> parts,
 by either re-running without cleaning a lifecycle step upon changes for plugins that allow for it
 (through their underlying architecture) or automatically cleaning and re-running the necessary
 lifecycle steps for that part.</p>
-
 <p>Here is <code>snapcraft</code> in action considering a project that has already been pulled:</p>
-
-<p><a href="https://asciinema.org/a/l3gN5QyQy3Dgq0KzP52SdNv1q"><img src="https://asciinema.org/a/l3gN5QyQy3Dgq0KzP52SdNv1q.svg" alt="asciicast" /></a></p>
-
+<p><a href="https://asciinema.org/a/l3gN5QyQy3Dgq0KzP52SdNv1q"><img src="https://asciinema.org/a/l3gN5QyQy3Dgq0KzP52SdNv1q.svg" alt="asciicast"></a></p>
 <h3 id="implicit-source">Implicit source</h3>
-
 <p>Previously, if a source was not specified for a part, an implicit default
 source of <code>.</code> were set for parts. This was clearly a mistake that led to
 many confusing errors. Starting with version 3.0, if a plugins requires a
@@ -271,20 +229,14 @@ source to be specified, it will be required through
 the schema for which an appropriate error message will be raised. For plugins
 such as <code>nil</code>, a <code>source</code> is not really needed, so if it is not set, no action
 upon local sources (i.e.: <code>.</code>) will be taken.</p>
-
 <h2 id="plugins">Plugins</h2>
-
 <p>The majority of non deprecated or removed plugins have been reworked to be <code>base</code> aware.
 Since the declaration of the <code>base</code> keyword is done manually by the user, some plugins
 have introduced semantic changes into how they operate as well.</p>
-
 <p>Below is the set of plugins with interesting changes and new properties
 available to the user.</p>
-
 <h3 id="ant">ant</h3>
-
 <p>These are the properties the <code>ant</code> plugin now operates with:</p>
-
 <pre><code>    - ant-properties:
       (object)
       A dictionary of key-value pairs. Set the following properties when
@@ -309,12 +261,8 @@ available to the user.</p>
       (string)
       openjdk version available to the base to use. If not set the latest
       version available to the base will be used.
-</code></pre>
-
-<h3 id="catkin"><code>catkin</code></h3>
-
+</code></pre><h3 id="catkin"><code>catkin</code></h3>
 <p>These are the properties the <code>catkin</code> plugin now operates with:</p>
-
 <pre><code>    - catkin-packages:
       (list of strings)
       List of catkin packages to build.
@@ -353,12 +301,8 @@ available to the user.</p>
       (string)
       The URI to ros master setting the env variable ROS_MASTER_URI. Defaults
       to http://localhost:11311.
-</code></pre>
-
-<h3 id="go"><code>go</code></h3>
-
+</code></pre><h3 id="go"><code>go</code></h3>
 <p>These are the properties the <code>go</code> plugin now operates with:</p>
-
 <pre><code>    - go-channel:
       (string, default: latest/stable)
       The Snap Store channel to install go from. If set to an empty string,
@@ -382,12 +326,8 @@ available to the user.</p>
     - go-buildtags:
       (list of strings)
       Tags to use during the go build. Default is not to use any build tags.
-</code></pre>
-
-<h3 id="godeps"><code>godeps</code></h3>
-
+</code></pre><h3 id="godeps"><code>godeps</code></h3>
 <p>These are the properties the <code>godeps</code> plugin now operates with:</p>
-
 <pre><code>    - go-channel:
       (string, default: latest/stable)
       The Snap Store channel to install go from. If set to an empty string,
@@ -411,12 +351,8 @@ available to the user.</p>
       This entry tells the checked out `source` to live within a certain path
       within `GOPATH`. This is required in order to work with absolute imports
       and import path checking.
-</code></pre>
-
-<h3 id="gradle"><code>gradle</code></h3>
-
+</code></pre><h3 id="gradle"><code>gradle</code></h3>
 <p>These are the properties the <code>gradle</code> plugin now operates with:</p>
-
 <pre><code>    - gradle-options:
       (list of strings)
       Flags to pass to the build using the gradle semantics for parameters.
@@ -443,12 +379,8 @@ available to the user.</p>
       (string)
       openjdk version available to the base to use. If not set the latest
       version available to the base will be used.
-</code></pre>
-
-<h3 id="meson"><code>meson</code></h3>
-
+</code></pre><h3 id="meson"><code>meson</code></h3>
 <p>These are the properties the <code>meson</code> plugin now operates with:</p>
-
 <pre><code>    - meson-version:
       (string)
       The version of meson to install from PyPI.
@@ -456,12 +388,8 @@ available to the user.</p>
     - meson-parameters:
       (list of strings)
       Pass the given parameters to the meson command.
-</code></pre>
-
-<h3 id="nodejs"><code>nodejs</code></h3>
-
+</code></pre><h3 id="nodejs"><code>nodejs</code></h3>
 <p>These are the properties the <code>nodejs</code> plugin now operates with:</p>
-
 <pre><code>    - nodejs-version:
       (string)
       The version of nodejs you want the snap to run on.
@@ -476,12 +404,8 @@ available to the user.</p>
     - nodejs-yarn-version:
       (string)
       Applicable when using yarn. Defaults to the latest if not set.
-</code></pre>
-
-<h3 id="python"><code>python</code></h3>
-
+</code></pre><h3 id="python"><code>python</code></h3>
 <p>These are the properties the <code>python</code> plugin now operates with:</p>
-
 <pre><code>    - requirements:
       (list of strings)
       List of paths to requirements files.
@@ -502,12 +426,8 @@ available to the user.</p>
     - python-version:
       (string; default: python3)
       The python version to use. Valid options are: python2 and python3
-</code></pre>
-
-<h1 id="full-list-of-changes">Full list of changes</h1>
-
+</code></pre><h1 id="full-list-of-changes">Full list of changes</h1>
 <p>The issues and features worked on for 3.0 can be seen on the <a href="https://launchpad.net/snapcraft/+milestone/3.0">3.0 launchpad milestone</a> which are reflected in the following change list:</p>
-
 <ul>
 <li>snap: add the https transport (#2244)</li>
 <li>build providers: environment setup for projects (#2225)</li>

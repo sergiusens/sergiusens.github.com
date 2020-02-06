@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on </title>
@@ -6,10 +6,19 @@
     <description>Recent content in ubuntu on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Apr 2019 14:05:04 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 13:29:02 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup LXD with Ubuntu&#39;s ZFS on root</title>
+      <link>http://blog.sergiusens.org/posts/setup-lxd-with-ubuntu-20.04-with-zfs-on-root/</link>
+      <pubDate>Wed, 29 Jan 2020 13:29:02 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/setup-lxd-with-ubuntu-20.04-with-zfs-on-root/</guid>
+      <description>I want to have a head start to make sure Ubuntu 20.04 works flawlessly by the time it releases. I am however making some bold moves, like setting up ZFS on Root during install which is currently marked as EXPERIMENTAL. TODO zfs on root screenshot   After the installation is done, we can check that the installer creates two pools: $ zpool list NAME SIZE ALLOC FREE CKPOINT EXPANDSZ FRAG CAP DEDUP HEALTH ALTROOT bpool 1,88G 178M 1,70G - - 0% 9% 1.</description>
+    </item>
     
     <item>
       <title>Snapcraft 3.3</title>
@@ -73,7 +82,8 @@ The reasons for this feature work to exist, for those not up to speed, is that w
       <pubDate>Tue, 17 Jul 2018 09:50:20 -0300</pubDate>
       
       <guid>http://blog.sergiusens.org/posts/new-laptop/</guid>
-      <description>Triggers Recently, as of last week, I decided to purchase a new laptop to replace my Microsoft Surface Pro 4 with which I was having a bittersweet relationship. The Surface Pro 4 is really nice hardware, I originally got it to get a head start and collaborate on the convergence story with Unity 8 on the desktop, but as is of folk knowledge now, some strategic choices were made.</description>
+      <description>Triggers Recently, as of last week, I decided to purchase a new laptop to replace my Microsoft Surface Pro 4 with which I was having a bittersweet relationship. The Surface Pro 4 is really nice hardware, I originally got it to get a head start and collaborate on the convergence story with Unity 8 on the desktop, but as is of folk knowledge now, some strategic choices were made.
+I still kept the device and actually used it, as I mentioned, it is nice hardware but the support on Linux is just not great, alleviated greatly thanks to jakeday&amp;lsquo;s kernel tree, yet still not fully supported.</description>
     </item>
     
     <item>
@@ -209,7 +219,7 @@ Some things have change, if you are tracking the bleeding edge you will notice a
       <guid>http://blog.sergiusens.org/posts/preliminary-support-for-dtb-override-from-oem-snaps/</guid>
       <description>Today the always in motion ppa ppa:snappy-dev/tools has landed support for overriding the dtb provided by the platform in the device part with one provided by the oem snap.
 The package.yaml for the oem snap has been extended a bit to support this, an example follows for extending the am335x-boneblack platform.
-name: mydevice.sergiusens vendor: sergiusens icon: meta/icon.png version: 1.0 type: oem branding: name: My device subname: Sergiusens Inc. store: oem-key: 123456 hardware: dtb: mydtb.</description>
+The path hardware/dtb key in the yaml holds a value which is the path to the dtb withing the package, so in this case, I put mydtb.</description>
     </item>
     
     <item>
@@ -238,7 +248,7 @@ If you had noticed, we use ubuntu-device-flash to create this core image, and fo
       <pubDate>Thu, 27 Nov 2014 00:06:12 -0300</pubDate>
       
       <guid>http://blog.sergiusens.org/posts/travis-and-ruby-gems-setup-on-ubuntu/</guid>
-      <description> Quick install Most of the instalation instructions that dangle the web just make you sudo gem install, I don&amp;rsquo;t like that, so here&amp;rsquo;s the quick reference for when I need to do this next time:
+      <description>Quick install Most of the instalation instructions that dangle the web just make you sudo gem install, I don&amp;rsquo;t like that, so here&amp;rsquo;s the quick reference for when I need to do this next time:
 sudo apt install ruby-dev export GEM_HOME=$HOME/gems gem install travis -v 1.7.4 --no-rdoc --no-ri  And this goes into ~/.bashrc:
 export GEM_HOME=$HOME/gems export PATH=$PATH:$GEM_HOME/bin  </description>
     </item>

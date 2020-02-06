@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snappy_rolling_back_on_kernel_panic/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
     </a>    
     
 
@@ -113,18 +113,12 @@
           <p>Image you get an update and the kernel panics with that update, what are you to
 do? Suppose now that you have a snappy based system, this is automatically
 solved for you.</p>
-
 <p>Here’s a short video showing this on a Beagle Bone Black, the concept is quite
 simple, if there is a panic, we revert to the last known state. In this video I
 inject an initrd that panics on boot after issuing a <code>snappy update</code> and before
 rebooting into the update.</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/xIHEy5saBa8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
+<!-- raw HTML omitted -->
 <p>In this video you observe the following:</p>
-
 <ul>
 <li>Manually checking for updates.</li>
 <li>Manually applying the updates.</li>
@@ -134,7 +128,6 @@ and <code>system-a</code> or <code>system-b</code> selection.</li>
 <li>Rebooting into the new kernel.</li>
 <li>Observing a panic and rebooting back into the working system.</li>
 </ul>
-
 <p>In the normal case this would seldom happen (the broken boot aside) as the
 autopiloting feature is enabled by default today, which you can check by
 running <code>snappy config ubuntu-core</code></p>

@@ -40,7 +40,7 @@ Some things have change" />
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -98,7 +98,7 @@ Some things have change" />
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/updates-in-snappy-and-ubunu-device-flash/">
-      <div class="post-card-image" style="background-image: url(/defimg/6.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/4.jpg)"></div>
     </a>    
     
 
@@ -115,21 +115,17 @@ Some things have change" />
           20 April 2015
           <p>The past few weeks in the snappy world have been a revolt, better said a rapid evolution for
 it to be closer to what we wanted it to be.</p>
-
 <p>Some things have change, if you are tracking the bleeding edge you will notice a couple of
 changes, the store for example now exposes packages depending on the <em>OS release</em>, and system
 images are now built against an <em>OS release</em> as well. For core images we have two choices:</p>
-
 <ul>
 <li>15.04</li>
 <li>rolling</li>
 </ul>
-
 <p><code>15.04</code> will be nicely locked down and guarantee stability while <code>rolling</code> will just roll
 on and you will see it stumble over (although it shouldn’t break badly, <code>API</code>s are what we
 will try and aspire to keep in the breaking zone). Try is a strong word, which is why <code>channels</code>
 are being used; the <code>core</code> images have the concept of <code>channel</code> which can be:</p>
-
 <ul>
 <li>stable</li>
 <li>rc</li>
@@ -137,14 +133,11 @@ are being used; the <code>core</code> images have the concept of <code>channel</
 <li>alpha</li>
 <li>edge</li>
 </ul>
-
 <p>Today, as of this writing, we are supporting <code>edge</code> and <code>alpha</code> for each <em>OS release</em> and as soon
 as we release we will have a <code>stable</code> channel enabled. Store support for channels is coming to
 a future near you which means that eventually packages can track different channels.</p>
-
 <p>Another addition is a new <code>snap</code> type called <code>oem</code>, this snappy package allows OEMs to enable
 devices and boards with a degree of customization such as:</p>
-
 <ul>
 <li>preinstalled unremovable or removable packages</li>
 <li>default configurations for preinstalled packages and ubuntu-core</li>
@@ -152,34 +145,24 @@ devices and boards with a degree of customization such as:</p>
 <li>custom DTBs</li>
 <li>boot files (e.g.; u-boot, uEnv.txt)</li>
 </ul>
-
 <p>This package, uploaded to the store allows people to create custom <em>enablements</em> to support
 their product stories. This package’s capabilities can grow in the future to support some
 other niceties.</p>
-
 <p>If you happen to use the development ppa for snappy <code>ppa:snappy-dev/tools</code> you should be seeing
 a new <code>ubuntu-device-flash</code> in the updates which supports most of this syntax and retires early
 enablement work.</p>
-
 <p>So in order to create a default image for the Beagle Bone Black you would do:</p>
-
 <pre><code>sudo ubuntu-device-flash core 15.04 --channel edge --oem beagleblack --output bbb.img
 </code></pre>
-
 <p>To create an generic amd64 image</p>
-
 <pre><code>sudo ubuntu-device-flash core 15.04 --channel edge --output x86.img
 </code></pre>
-
 <p><code>15.04</code> could be replaced with rolling and today the default channel is <code>edge</code> but will be
 <code>stable</code> as soon as we have something in there :-)</p>
-
 <p>Keep in mind now that <code>15.04</code> and <code>rolling</code> will return different store search results depending
 on what the developer has targetted.</p>
-
 <p>Installing local <code>oem</code> snaps passing in <code>--oem</code> forces you to setup <code>--developer-mode</code> if
 the package is not signed by the store.</p>
-
 <p>Last but not least, the <code>flashassets</code> entry from <code>device</code> tarballs used to enable new devices are
 now ignored in favor of using the information from the <code>oem</code> snappy package, this means that if
 you have a port you will need to move it over to the <a href="http://bazaar.launchpad.net/~snappy-dev/snappy/snappy/view/head:/docs/oem.md">oem packaging</a>.</p>

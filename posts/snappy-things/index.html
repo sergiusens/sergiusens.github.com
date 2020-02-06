@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.55.2" />
+    <meta name="generator" content="Hugo 0.64.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snappy-things/">
-      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
     </a>    
     
 
@@ -113,42 +113,29 @@
           <p>A while back, Snappy was <a href="https://developer.ubuntu.com/en/snappy/">introduced</a>
 and it was great, while that was happening we were already working on the next
 great thing, Snappy for devices, or as everyone calls it, <em>things</em>.</p>
-
 <p>Today that was finally <a href="http://www.ubuntu.com/things">announced</a>. It’s been
 lots of fun working on this. Enablement aside, we also created a very minimal
 <strong>webdm</strong>, it is a <em>Web Device Management</em> snap framework provided in the store
 which can be easily installed on existing devices by calling</p>
-
 <pre><code>sudo snappy install webdm
 </code></pre>
-
 <p>On networks where it is allowed, it can be accessed by going to
-<a href="http://webdm.local:4200">http://webdm.local:4200</a>. Here’s a quick demo of it running on a BeagleBone Black</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/4hbY4UNFl6w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
+<a href="http://webdm.local">http://webdm.local</a>:4200. Here’s a quick demo of it running on a BeagleBone Black</p>
+<!-- raw HTML omitted -->
 <p>So to get this going, all you need is to follow what is mentioned in the main
 site and pop that sdcard into the device</p>
-
 <pre><code>wget  http://cdimage.ubuntu.com/ubuntu-core/preview/ubuntu-core-WEBDM-alpha-02_armhf-bbb.img.xz
 unxz ubuntu-core-WEBDM-alpha-02_armhf-bbb.img.xz
 dd if=ubuntu-core-WEBDM-alpha-02_armhf-bbb.img of=/dev/sdXXX bs=32M
 </code></pre>
-
 <p>The alternative way is to use ubuntu-device-flash to create such image, you can get it easily for Ubuntu by adding our tools ppa</p>
-
 <pre><code>sudo add-apt-repository ppa:snappy-dev/beta
 sudo apt update
 sudo apt install snappy-tools
 </code></pre>
-
 <p>And then move on to building your image, this is what I do:</p>
-
 <pre><code>ubuntu-device-flash --verbose core --channel ubuntu-core/devel-proposed --output snappy-core.img --size 10 --developer-mode --install webdm_0.1_multi.snap --install beagleboneblack.element14_1.0_all.snap
 </code></pre>
-
 <p>The install option is basically an option to install <code>snaps</code> during
 provisioning; you may notice this weird one
 <code>beagleboneblack.element14_1.0_all.snap</code>, that is an <em>oem</em> snap and in summary,
@@ -156,12 +143,9 @@ it’s similar to the customization framework in Ubuntu Touch, but different.
 today it’s pretty minimal and allows to just set the branding text either as
 can be seen on the video or at the login prompt, where you would see something
 like this:</p>
-
 <pre><code>(BeagleBoneBlack)ubuntu@localhost:~$
 </code></pre>
-
 <p>More on the <code>oem</code> part later.</p>
-
 <p>Happy sapping!</p>
 
       </section>
