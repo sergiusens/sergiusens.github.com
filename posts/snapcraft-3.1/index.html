@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snapcraft-3.1/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
     </a>    
     
 
@@ -124,13 +124,13 @@
 <p>The <code>before</code> and <code>after</code> keywords, used for ordering service launching within a snap, are now properly supported in <code>snapcraft</code>.</p>
 <h3 id="appstream-extractor">Appstream extractor</h3>
 <p>The appstream metadata extractor can now properly handle tags inside the relevant nodes and properly filter <code>xml:lang</code>, such that:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#f92672">&lt;description</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;p</span><span style="color:#f92672">&gt;</span>List:<span style="color:#f92672">&lt;/p&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#f92672">&lt;description&gt;</span>
+    <span style="color:#f92672">&lt;p&gt;</span>List:<span style="color:#f92672">&lt;/p&gt;</span>
     <span style="color:#f92672">&lt;p</span> <span style="color:#a6e22e">xml:lang=</span><span style="color:#e6db74">&#34;es&#34;</span><span style="color:#f92672">&gt;</span>Lista:<span style="color:#f92672">&lt;/p&gt;</span>
-    <span style="color:#f92672">&lt;ul</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;li</span><span style="color:#f92672">&gt;</span>First item.<span style="color:#f92672">&lt;/li&gt;</span>
+    <span style="color:#f92672">&lt;ul&gt;</span>
+      <span style="color:#f92672">&lt;li&gt;</span>First item.<span style="color:#f92672">&lt;/li&gt;</span>
       <span style="color:#f92672">&lt;li</span> <span style="color:#a6e22e">xml:lang=</span><span style="color:#e6db74">&#34;es&#34;</span><span style="color:#f92672">&gt;</span>Primer item.<span style="color:#f92672">&lt;/li&gt;</span>
-      <span style="color:#f92672">&lt;li</span><span style="color:#f92672">&gt;</span>Second item.<span style="color:#f92672">&lt;/li&gt;</span>
+      <span style="color:#f92672">&lt;li&gt;</span>Second item.<span style="color:#f92672">&lt;/li&gt;</span>
       <span style="color:#f92672">&lt;li</span> <span style="color:#a6e22e">xml:lang=</span><span style="color:#e6db74">&#34;es&#34;</span><span style="color:#f92672">&gt;</span>Segundo item.<span style="color:#f92672">&lt;/li&gt;</span>
     <span style="color:#f92672">&lt;/ul&gt;</span>
   <span style="color:#f92672">&lt;/description&gt;</span>

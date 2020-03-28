@@ -40,7 +40,7 @@ For those not familiar, this is snap" />
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -193,7 +193,7 @@ change the source:</p>
         <span style="color:#66d9ef">source</span>: .
         <span style="color:#66d9ef">after</span>: [curl]
     <span style="color:#66d9ef">curl</span>:
-        <span style="color:#66d9ef">source</span>: http://curl.haxx.se/download/curl<span style="color:#ae81ff">-7.45</span><span style="color:#ae81ff">.0</span>.tar.bz2
+        <span style="color:#66d9ef">source</span>: http://curl.haxx.se/download/curl<span style="color:#ae81ff">-7.45.0</span>.tar.bz2
 </code></pre></div><p>And we will get to build curl but using a newer version of curl. The trick
 is that the part definition here is missing the <code>plugin</code> entry, thereby
 instructing snapcraft to look for the full part definition from the cache.</p>
@@ -220,7 +220,7 @@ would look like:</p>
             - -lib/<span style="color:#75715e">*.la</span>
             - -include
             - -share
-        <span style="color:#66d9ef">source</span>: http://curl.haxx.se/download/curl<span style="color:#ae81ff">-7.44</span><span style="color:#ae81ff">.0</span>.tar.bz2
+        <span style="color:#66d9ef">source</span>: http://curl.haxx.se/download/curl<span style="color:#ae81ff">-7.44.0</span>.tar.bz2
         <span style="color:#66d9ef">source-type</span>: tar
 </code></pre></div><h1 id="sharing-your-part">Sharing your part</h1>
 <p>Now what if you have a part and want to share it with the rest of the world? It

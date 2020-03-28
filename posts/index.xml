@@ -6,10 +6,19 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2020 13:29:02 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 19:38:02 -0300</lastBuildDate>
     
 	<atom:link href="http://blog.sergiusens.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fingerprint Reader Support for Lenovo x390Y on Ubuntu</title>
+      <link>http://blog.sergiusens.org/posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/</link>
+      <pubDate>Sat, 28 Mar 2020 19:38:02 -0300</pubDate>
+      
+      <guid>http://blog.sergiusens.org/posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/</guid>
+      <description>This is experimental, but I went ahead and ran the following after reading about it on reddit. snap install fwupdmgr /snap/bin/fwupdmgr install https://fwupd.org/downloads/cbe7b45a2591e9d149e00cd4bbf0ccbe5bb95da7-Synaptics-Prometheus_Config-0021.cab /snap/bin/fwupdmgr install https://fwupd.org/downloads/3b5102b3430329a10a3636b4a594fc3dd2bfdc09-Synaptics-Prometheus-10.02.3110269.cab   These two cab files are referenced from:    https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config    https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware    Rebooted and then went ahead with the actual fingerprint setup:  After this was all done, login with fingerprints just worked. The only downside is that you need to press a key first to bring up the unlock logic.</description>
+    </item>
     
     <item>
       <title>Setup LXD with Ubuntu&#39;s ZFS on root</title>

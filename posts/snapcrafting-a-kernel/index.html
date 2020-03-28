@@ -37,7 +37,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
@@ -95,7 +95,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snapcrafting-a-kernel/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
     </a>    
     
 
@@ -152,7 +152,7 @@ to clone it and start snapcrafting from there, so let&rsquo;s clone</p>
 <p>Go into the recently cloned kernel directory and let&rsquo;s get started with a yaml
 that has the standard entries for someone familiar with <code>snapcraft.yaml</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: 96boards-kernel
-<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4</span><span style="color:#ae81ff">.0</span>
+<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4.0</span>
 <span style="color:#66d9ef">summary</span>: 96boards reference kernel with qualcomm firmware
 <span style="color:#66d9ef">description</span>: this is an example on how to build a kernel snap.
 </code></pre></div><p>Now this is a <code>kernel</code> snap, so let&rsquo;s add that information in; this is rather
@@ -160,7 +160,7 @@ important since if not done, the resulting snap might as well be some sort
 of asset holder; by adding the <code>type</code> of snap, <em>snappy Ubuntu Core</em> will know
 what to do:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: 96boards-kernel
-<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4</span><span style="color:#ae81ff">.0</span>
+<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4.0</span>
 <span style="color:#66d9ef">summary</span>: 96boards reference kernel with qualcomm firmware
 <span style="color:#66d9ef">description</span>: this is an example on how to build a kernel snap.
 <span style="color:#66d9ef">type</span>: kernel
@@ -185,7 +185,7 @@ making use of <code>kernel-device-trees</code>. In <code>kernel-initrd-modules</
 mention <code>squashfs</code> as we need support for it to boot.</p>
 <p>Given that particular piece of information let&rsquo;s work on adding this part:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: 96boards-kernel
-<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4</span><span style="color:#ae81ff">.0</span>
+<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4.0</span>
 <span style="color:#66d9ef">summary</span>: 96boards reference kernel with qualcomm firmware
 <span style="color:#66d9ef">description</span>: this is an example on how to build a kernel snap.
 <span style="color:#66d9ef">type</span>: kernel
@@ -210,7 +210,7 @@ Qualcomm, so head over to <a href="https://developer.qualcomm.com/download/db410
 and get the zip file. Extract the firmware tarball from inside that zip and
 create a firmware part:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: 96boards-kernel
-<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4</span><span style="color:#ae81ff">.0</span>
+<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">4.4.0</span>
 <span style="color:#66d9ef">summary</span>: 96boards reference kernel with qualcomm firmware
 <span style="color:#66d9ef">description</span>: this is an example on how to build a kernel snap.
 <span style="color:#66d9ef">type</span>: kernel

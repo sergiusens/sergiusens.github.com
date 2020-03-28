@@ -34,7 +34,7 @@
 
     <meta property="og:image" content="img/banner.jpg"/>
 
-    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../built/screen.css" /> 
@@ -92,8 +92,36 @@
 
 <article class="post-card post">
     
+    <a class="post-card-image-link" href="../posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/">
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="../posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/">
+          <header class="post-card-header">
+              
+              <h2 class="post-card-title">Fingerprint Reader Support for Lenovo x390Y on Ubuntu</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>This is experimental, but I went ahead and ran the following after reading about it on reddit. snap install fwupdmgr /snap/bin/fwupdmgr install https://fwupd.org/downloads/cbe7b45a2591e9d149e00cd4bbf0ccbe5bb95da7-Synaptics-Prometheus_Config-0021.cab /snap/bin/fwupdmgr install https://fwupd.org/downloads/3b5102b3430329a10a3636b4a594fc3dd2bfdc09-Synaptics-Prometheus-10.02.3110269.cab   These two cab files are referenced from:    https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config    https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware    Rebooted and then went ahead with the actual fingerprint setup:  After this was all done, login with fingerprints just worked. The only downside is that you need to press a key first to bring up the unlock logic. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="../img/avatar.png" alt="Author" />
+          <span class="post-card-author"><a href="../">Sergio Schvezov</a></span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post">
+    
     <a class="post-card-image-link" href="../posts/setup-lxd-with-ubuntu-20.04-with-zfs-on-root/">
-      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
     </a>
     
 
@@ -121,7 +149,7 @@
 <article class="post-card post">
     
     <a class="post-card-image-link" href="../posts/snapcraft-3.4/">
-      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
     </a>
     
 
@@ -152,7 +180,7 @@ The full release notes are replicated here below
 <article class="post-card post">
     
     <a class="post-card-image-link" href="../posts/snapcraft-3.3/">
-      <div class="post-card-image" style="background-image: url(/defimg/1.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
     </a>
     
 
@@ -187,7 +215,7 @@ Core base: core In order to use the new features of snapcraft, introduced with 3
 <article class="post-card post">
     
     <a class="post-card-image-link" href="../posts/broader-use-of-bases-for-snaps/">
-      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/3.jpg)"></div>
     </a>
     
 
@@ -240,41 +268,6 @@ And one of the things we discussed over the course of that week was the implicat
 If you are already on the stable channel for snapcraft then all you need to do is wait for the snap to be refreshed.
 The full release notes are replicated here below
 Build Environments It is now possible, when using the base keyword, to once again clean parts. ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <img class="author-profile-image" src="../img/avatar.png" alt="Author" />
-          <span class="post-card-author"><a href="../">Sergio Schvezov</a></span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post">
-    
-    <a class="post-card-image-link" href="../posts/snapcraft-3.0/">
-      <div class="post-card-image" style="background-image: url(/defimg/5.jpg)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="../posts/snapcraft-3.0/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #snappy 
-              #snapcraft 
-              #development  </span>
-              
-              <h2 class="post-card-title">Snapcraft 3.0</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>The release notes for snapcraft 3.0 have been long overdue. For convenience I will reproduce them here too.
-Presenting snapcraft 3.0 The arrival of snapcraft 3.0 brings fresh air into how snap development takes place!
-We took the learnings from the main pain points you had when creating snaps in the past several years, and we we introduced those lessons into a brand new release - snapcraft 3.0!
-Build Environments As the cornerstone for behavioral change, we are introducing the concept of build environments. ...  </p>
               
           </section>
       </a>
