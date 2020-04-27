@@ -4,7 +4,17 @@
   
   <url>
     <loc>http://blog.sergiusens.org/</loc>
-    <lastmod>2020-03-28T19:38:02-03:00</lastmod>
+    <lastmod>2020-04-27T12:38:02-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.sergiusens.org/posts/</loc>
+    <lastmod>2020-04-27T12:38:02-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.sergiusens.org/posts/snapcraft-4.0/</loc>
+    <lastmod>2020-04-27T12:38:02-03:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +24,6 @@
   
   <url>
     <loc>http://blog.sergiusens.org/posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/</loc>
-    <lastmod>2020-03-28T19:38:02-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.sergiusens.org/posts/</loc>
     <lastmod>2020-03-28T19:38:02-03:00</lastmod>
   </url>
   

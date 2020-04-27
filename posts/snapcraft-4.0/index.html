@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-us" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Snapcraft 4.0 &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../../favicon.ico" />
+    <link rel="canonical" href="../../" />
+
+     <meta name="description" content="The team behind Snapcraft is please to present Snapcraft 4.0. Among the many changes included, here is the summary of highlights:
+ Support for the core20 base. " /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Snapcraft 4.0"/>
+    <meta name="twitter:description" content="The team behind Snapcraft is please to present Snapcraft 4.0. Among the many changes included, here is the summary of highlights:
+ Support for the core20 base. "/>
+    <meta name="twitter:url" content="/posts/snapcraft-4.0/" />
+    <meta name="twitter:site" content="@sergiusens"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Snapcraft 4.0 &middot; I me mine" />
+    <meta property="og:url" content="/posts/snapcraft-4.0/" />
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="The team behind Snapcraft is please to present Snapcraft 4.0. Among the many changes included, here is the summary of highlights:
+ Support for the core20 base. " />
+
+    <meta property="article:published_time" content="2020-04-27T12:38:02-03:00" />
+    
+
+    <meta property="og:image" content="img/banner.jpg"/>
+
+    <meta name="generator" content="Hugo 0.69.2" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../../built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="../../css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="ctsingle">
+
+  <div class="site-wrapper"> 
+
+<header class="site-header outer "  style="background-image: url(/img/banner.jpg)"  >
+  <div class="inner">
+    <div class="site-header-content">
+      <h1 class="site-title"> I me mine  </h1>
+        <h2 class="site-description">A placeholder to write things down </h2>
+    </div>
+
+    <nav class="site-nav">
+      <div class="site-nav-left"><ul class="nav" role="menu">
+        
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/sergiusens" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/sergiusens" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/SergioSchvezov" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 512 512"><path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683 C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615 c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915 s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z" /></svg></a>
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+    <div class="post-feed">
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="../../posts/snapcraft-4.0/">
+      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="../../posts/snapcraft-4.0/">
+          <header class="post-card-header">
+              
+              <h1 class="post-card-title">Snapcraft 4.0</h1>
+          </header>
+      </a>
+      <section class="post-card-excerpt" style="padding: 0 25px;">
+          27 April 2020
+          <p>The team behind Snapcraft is please to present Snapcraft 4.0.
+Among the many changes included, here is the summary of highlights:</p>
+<ul>
+<li>Support for the <code>core20</code> base.</li>
+<li><code>--use-lxd</code> support for all the snap supported architectures.</li>
+<li>Improved plugins for <code>core20</code>.</li>
+<li>Support for adding external repositories.</li>
+</ul>
+<p>This release can currently be tried out by switching to the candidate
+channel for <a href="https://snapcraft.io/snapcraft">Snapcraft</a>.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="plugins-v2">Plugins V2</h1>
+<p>To support <code>core20</code>, a new plugin infrastructure was worked on, this
+new infrastructure simplifies the plugins in a great way, with one
+great advantage: &ldquo;<em>quick rebuilds</em>&quot;.</p>
+<p>The plugins created for <code>core20</code> have been greatly simplified to drive
+the build technology and not so much to setup the environment to do
+so. This simplification in plugin logic has removed most of the
+perceived <em>magic</em> during Snapcraft builds for parts.</p>
+<p>They now only are concerned with Snapcraft&rsquo;s <em>build</em> step. The <em>pull</em>
+step is now completely owned by Snapcraft and dedicated to managing
+the <code>source</code> related entries for parts.</p>
+<p>The list of plugins that have <code>core20</code> is not as broad as <code>core</code> or
+<code>core18</code>, but they are a good set of plugins that make sense for this
+initial release:</p>
+<ul>
+<li><a href="#orgf23feb5">autotools</a></li>
+<li><a href="#orgd2a3c0e">cmake</a></li>
+<li><a href="#org3291d8f">dump</a></li>
+<li><a href="#orgf09a235">go</a></li>
+<li><a href="#org0b0a82c">make</a></li>
+<li><a href="#org51feefc">meson</a></li>
+<li><a href="#org426a14b">nil</a></li>
+<li><a href="#org7c77ebe">npm</a></li>
+<li><a href="#orgf5d5516">python</a></li>
+<li><a href="#orgd96325f">rust</a></li>
+</ul>
+<p>The command line related to plugins has gained some additional
+parameters to specifically reach <em>base</em> relevant information:</p>
+<ul>
+<li><code>snapcraft help &lt;plugin-name&gt; [--base &lt;base&gt;]</code></li>
+<li>~snapcraft list-plugins [–base <!-- raw HTML omitted -->]</li>
+</ul>
+<p>These commands will default to using the <code>base</code> defined in the current
+Snapcraft project or to the latest supported base (i.e.; <code>core20</code>).</p>
+<p>Plugins also now have their properties scoped (i.e.; prefixed with the
+plugin-name).</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="autotools">autotools</h2>
+<p>The autotools plugin for <code>core20</code> works mostly in the same way, with
+the following exceptions:</p>
+<ul>
+<li>The plugin checks for the existence of <code>configure</code> in the source and
+if not found, runs <code>autoconf --install</code>.</li>
+<li><code>configflags</code> has been renamed to <code>autotools~configure-parameters</code>.</li>
+<li><code>install-via</code> has been removed.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="cmake">cmake</h2>
+<p>This plugin works mostly the same, except for the fact that
+<code>configflags</code> has been renamed to <code>cmake-parameters</code>.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="dump">dump</h2>
+<p>This behaves in the same way for <code>core20</code> as for <code>core18</code> or <code>core</code>.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="go">go</h2>
+<p>The plugin has been revamped for <code>core20</code>, it only supports projects
+using <code>go.mod</code>, which means it only supports version of <code>go</code> that
+support this.</p>
+<p>These are the only configuration parameters available to the plugin
+when using <code>core20</code>:</p>
+<ul>
+<li><code>go-channel</code>.</li>
+<li><code>go-buildtags</code>.</li>
+</ul>
+<p>While these are no longer available when using <code>core20</code>:</p>
+<ul>
+<li><code>go-importpath</code>.</li>
+<li><code>go-packages</code>.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="make">make</h2>
+<p>The following parameteres will be accepted by the plugin when setting
+<code>core20</code> as the base:</p>
+<ul>
+<li><code>make-parameters</code>.</li>
+</ul>
+<p>Whereas the following will not be as they can all be easily managed
+with <code>override-build</code>:</p>
+<ul>
+<li><code>makefile</code>.</li>
+<li><code>artifacts</code>.</li>
+<li><code>make-install-var</code></li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="meson">meson</h2>
+<p>This plugin suffered no change for use in <code>core20</code> aside from being
+enhanced for easier rebuilds.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="nil">nil</h2>
+<p>This behaves in the same way for <code>core20</code> as for <code>core18</code> or <code>core</code>.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="npm">npm</h2>
+<p>This is a new plugin being introduced in <code>core20</code>, meant to replace
+with <code>nodejs</code> plugin only available for <code>core</code> and <code>core18</code>.</p>
+<p>The only parameter the plugin now accepts is <code>npm-node-version</code>.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="python">python</h2>
+<p>This plugin has been the one which was simplified the most for
+<code>core20</code> and yet provides the most new functionality. It essentially
+behaves like a virtual environment, preferring the python interpreter
+shipped in the <code>core20</code> base.</p>
+<p>By behaving this way, the plugin now operates in a closer manner to
+what a python developer would expect and allows for easier <em>snap</em>
+customization whilst still using the plugin.</p>
+<p>The plugin can use an interpreter if it is added trough a
+comprehensive list of <code>stage-packages</code> (an extension shall be
+evaluated in the future to provide alternative complete python
+stacks).</p>
+<p>The plugin when used with <code>core20</code> accepts the following parameters
+with the same semantics as the V1 plugin used in <code>core</code> and <code>core18</code>:</p>
+<ul>
+<li><code>python-packages</code>.</li>
+<li><code>requirements</code>.</li>
+<li><code>python-packages</code>.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="rust">rust</h2>
+<p>This is another plugin that has been simplified in amount of
+parameters when targeting <code>core20</code> as a base:</p>
+<ul>
+<li><code>rust-features</code> same behaviour as for <code>core</code> and <code>core18</code>.</li>
+<li><code>rust-path</code>, defaulting to the current working directory, but can be
+set to the relative path of the crate to build when using
+workspaces.</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="package-management">Package Management</h1>
+<p>This feature adds a high-level key package-management to snapcraft.yaml that
+enables users to configure additional repositories &amp; components. Specifically,
+the scope of package-management is for anything affecting the behavior and
+availability of:</p>
+<ul>
+<li>build-packages</li>
+<li>stage-packages</li>
+<li>build-snaps</li>
+<li>stage-snaps</li>
+<li>python-packages</li>
+</ul>
+<p>The scope of this spec will focus on the configuration of <code>apt</code> repositories,
+affecting the availability of <code>build-packages</code> and <code>stage-pagickages</code>.</p>
+<p>Simply configure <code>package-repositories</code> in snapcraft.yaml.  Snapcraft will log
+a warning that the feature is experimental until the schema is to be considered
+stable.</p>
+<p>Here are some example configurations:</p>
+<pre><code>name: apt-example
+base: core18
+
+&lt;snip&gt;
+
+package-repositories:
+  - type: apt
+    ppa: snappy-dev/snapcraft-daily
+
+  - type: apt
+    deb-types: [deb, deb-src]
+    components: [main]
+    suites: [$SNAPCRAFT_APT_RELEASE]
+    key-id: 78E1918602959B9C59103100F1831DDAFC42E99D
+    url: http://ppa.launchpad.net/snappy-dev/snapcraft-daily/ubuntu
+
+  - type: apt
+    deb-types: [deb, deb-src]
+    name: default
+    components: [main, multiverse, restricted, universe]
+    suites: [$SNAPCRAFT_APT_RELEASE, $SNAPCRAFT_APT_RELEASE-updates]
+    key-id: test-key
+    url: http://archive.ubuntu.com/ubuntu
+</code></pre>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="build-environments">Build Environments</h1>
+<p>The <code>--use-lxd</code> flag has been promoted out of experimental and now
+supports the same build roots as build.snapcraft.io (or Launchpad),
+bringing the two environments closer together. With these new images,
+there is now support for all the snap enabled architectures too.</p>
+
+      </section>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="../../img/avatar.png" alt="Author" />
+          <span class="post-card-author"><a href="../../">Sergio Schvezov</a></span>
+      </footer>
+    </div>
+</article>
+
+    </div>
+
+    <nav class="pagination" role="navigation">
+      
+      <span class="page-number">&nbsp;</span>
+      
+          <a class="older-posts" href="../../posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/"><span class="hide">Previous Post</span> &rarr;</a>
+      
+    </nav>
+
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-4.0\/";  
+this.page.identifier = "http:\/\/blog.sergiusens.org\/posts\/snapcraft-4.0\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://sergiusens.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</main>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="../../"></a> All rights reserved - 2018 <br>
+      
+    </section>
+    <nav class="site-footer-nav">
+        <a href="../../">Latest Posts</a>
+        
+        <a href="https://twitter.com/sergiusens" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/sergiusens" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/SergioSchvezov" target="_blank" rel="noopener">LinkedIn</a>
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-37640305-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+
+</body></html>
