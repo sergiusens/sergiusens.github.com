@@ -98,7 +98,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="../../posts/snapcraft-4.0/">
-      <div class="post-card-image" style="background-image: url(/defimg/2.jpg)"></div>
+      <div class="post-card-image" style="background-image: url(/defimg/7.jpg)"></div>
     </a>    
     
 
@@ -297,6 +297,21 @@ package-repositories:
 supports the same build roots as build.snapcraft.io (or Launchpad),
 bringing the two environments closer together. With these new images,
 there is now support for all the snap enabled architectures too.</p>
+<h1 id="progressive-releases">Progressive Releases</h1>
+<p>Initial <em>experimental</em> support for progressive releases has landed in
+Snapcraft. To view any existing progressive release use the <code>status</code>
+command, as an example:</p>
+<pre><code>$ snapcraft status candycane
+Track     Arch    Channel    Version    Revision    Progress
+latest    all     stable     -          -           -
+          candidate  -          -           -
+          beta       0.6        8           → 20%
+                 10         13          → 80%
+          edge       ↑          ↑         -
+</code></pre>
+<p>To perform a progressive release, use the <code>release</code> command with the
+with the <code>--progressive</code> option. After releasing, the status of the
+release will be shown.</p>
 
       </section>
 
